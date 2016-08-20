@@ -1,0 +1,3 @@
+[submodule "Assets/UDBase"]
+	path = Assets/UDBase
+	url = git@github.com:KonH/UDBase.git
