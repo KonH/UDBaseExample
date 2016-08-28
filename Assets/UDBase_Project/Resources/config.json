@@ -1,0 +1,8 @@
+﻿example_node
+{
+	"Value": "some_string"
+}
+
+other_node 
+{
+}
