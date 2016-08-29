@@ -17,4 +17,10 @@ public class StateExample : ComponentHelper<IStateExample> {
 		}
 		return -1;
 	}
+
+	public static void SetSavedData(int value) {
+		if( Instance != null ) {
+			Instance.SetSavedData(value);
+		}
+	}
 }

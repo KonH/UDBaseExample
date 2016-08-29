@@ -6,4 +6,5 @@ public interface IStateExample : IComponent {
 
 	string GetConfigData();
 	int    GetSavedData();
+	void   SetSavedData(int value);
 }

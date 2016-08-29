@@ -11,5 +11,10 @@ public class ConfigStateTest : MonoBehaviour {
 
 		var saveValue = StateExample.GetSavedData();
 		Log.Message("Saved data: " + saveValue);
+
+		StateExample.SetSavedData(saveValue + 1);
+
+		var saveValueAfter = StateExample.GetSavedData();
+		Log.Message("Saved data after change: " + saveValueAfter);
 	}
 }
