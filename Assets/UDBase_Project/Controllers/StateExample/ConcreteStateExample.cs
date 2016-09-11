@@ -2,17 +2,18 @@
 using System.Collections;
 using UDBase.Components.Config;
 using UDBase.Components.Save;
+using UDBase.Utils.Json;
 
 public class ConcreteStateExample : IStateExample {
 
-	class ConcreteStateExampleConfig:IConfigNode {
+	class ConcreteStateExampleConfig:IJsonNode {
 
 		public string Name { get { return "example_node"; } }
 
 		public string Value = "";
 	}
 
-	class ConcreteStateExampleSave:ISaveNode {
+	class ConcreteStateExampleSave:IJsonNode {
 		public string Name { get { return "save_node"; } }
 
 		public int IntValue = 0;
