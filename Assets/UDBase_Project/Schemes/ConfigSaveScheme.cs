@@ -9,7 +9,7 @@ using UDBase.Components.Save;
 public class ProjectScheme : Scheme {
 
 	public ProjectScheme() {
-		AddComponent(new Log(), new Log_Unity());
+		AddComponent(new Log(), new UnityLog(), new VisualLog());
 		AddComponent(new Config(), new JsonResourcesConfig());
 		AddComponent(new Save(), new JsonDataSave());
 		AddComponent(new StateExample(), new ConcreteStateExample());

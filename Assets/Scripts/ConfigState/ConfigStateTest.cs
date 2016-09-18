@@ -7,14 +7,14 @@ public class ConfigStateTest : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		var configValue = StateExample.GetConfigData();
-		Log.Message("Config value: '" + configValue + "'");
+		Log.MessageFormat("Config value: '{0}'", LogTags.Common, configValue);
 
 		var saveValue = StateExample.GetSavedData();
-		Log.Message("Saved data: " + saveValue);
+		Log.MessageFormat("Saved data: {0}", LogTags.Common, saveValue);
 
 		StateExample.SetSavedData(saveValue + 1);
 
 		var saveValueAfter = StateExample.GetSavedData();
-		Log.Message("Saved data after change: " + saveValueAfter);
+		Log.MessageFormat("Saved data after change: {0}", LogTags.Common, saveValueAfter);
 	}
 }
