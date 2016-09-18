@@ -45,7 +45,6 @@ public class ConcreteStateExample : IStateExample {
 	public void SetSavedData(int value) {
 		if( _save == null ) {
 			_save = new ConcreteStateExampleSave();
-			_save.IntValue = value;
 		}
 		_save.IntValue = value;
 		Save.SaveNode(_save);
