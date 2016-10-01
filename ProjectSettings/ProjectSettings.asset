@@ -342,7 +342,7 @@ PlayerSettings:
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
   scriptingDefineSymbols:
-    1: Scheme_ConfigSaveState;Scheme_Declared
+    1: Scheme_ConfigSaveScheme;Scheme_Declared
     4: Scheme_ConfigSaveScheme;Scheme_Declared
     7: Scheme_ConfigSaveScheme;Scheme_Declared
     13: Scheme_ConfigSaveScheme;Scheme_Declared
