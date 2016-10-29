@@ -9,10 +9,10 @@ using UDBase.Controllers.Save;
 public class ProjectScheme : Scheme {
 
 	public ProjectScheme() {
-		AddComponent(new Log(), new UnityLog(), new VisualLog());
-		AddComponent(new Config(), new JsonResourcesConfig());
-		AddComponent(new Save(), new JsonDataSave());
-		AddComponent(new StateExample(), new ConcreteStateExample());
+		AddController(new Log(), new UnityLog(), new VisualLog());
+		AddController(new Config(), new JsonResourcesConfig());
+		AddController(new Save(), new JsonDataSave());
+		AddController(new StateExample(), new ConcreteStateExample());
 	}
 }
 #endif
