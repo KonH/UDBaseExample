@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UDBase.Components;
+using UDBase.Controllers;
 
-public interface IStateExample : IComponent {
+public interface IStateExample : IController {
 
 	string GetConfigData();
 	int    GetSavedData();

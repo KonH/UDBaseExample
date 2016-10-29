@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UDBase.Components;
+using UDBase.Controllers;
 
-public class StateExample : ComponentHelper<IStateExample> {
+public class StateExample : ControllerHelper<IStateExample> {
 
 	public static string GetConfigData() {
 		if( Instance != null ) {

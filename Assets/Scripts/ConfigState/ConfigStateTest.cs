@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UDBase.Components.Log;
+using UDBase.Controllers.Log;
 
 public class ConfigStateTest : MonoBehaviour {
 

@@ -2,9 +2,9 @@
 using UnityEngine;
 using System.Collections;
 using UDBase.Common;
-using UDBase.Components.Log;
-using UDBase.Components.Config;
-using UDBase.Components.Save;
+using UDBase.Controllers.Log;
+using UDBase.Controllers.Config;
+using UDBase.Controllers.Save;
 
 public class ProjectScheme : Scheme {
 
