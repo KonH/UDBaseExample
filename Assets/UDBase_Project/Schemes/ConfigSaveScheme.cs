@@ -5,6 +5,7 @@ using UDBase.Common;
 using UDBase.Controllers.Log;
 using UDBase.Controllers.Config;
 using UDBase.Controllers.Save;
+using UDBase.Controllers.Scene;
 
 public class ProjectScheme : Scheme {
 
@@ -13,6 +14,7 @@ public class ProjectScheme : Scheme {
 		AddController(new Config(), new JsonResourcesConfig());
 		AddController(new Save(), new JsonDataSave());
 		AddController(new StateExample(), new ConcreteStateExample());
+		AddController(new Scene(), new AsyncSceneLoader(new SceneName("Loading"), new SceneName("MainScene")));
 	}
 }
 #endif
