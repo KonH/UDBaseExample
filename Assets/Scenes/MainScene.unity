@@ -202,7 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690e583da4b854d64a6e037fb84f7a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExampleName: ConfigSave
+  Type: 1
+  Param: ConfigSave
 --- !u!114 &929533920
 MonoBehaviour:
   m_ObjectHideFlags: 0
