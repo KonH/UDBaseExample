@@ -14,7 +14,7 @@ public class ProjectScheme : Scheme {
 		AddController(new Config(), new JsonResourcesConfig());
 		AddController(new Save(), new JsonDataSave());
 		AddController(new StateExample(), new ConcreteStateExample());
-		AddController(new Scene(), new AsyncSceneLoader(new SceneName("Loading"), new SceneName("MainScene")));
+		AddController(new Scene(), new AsyncSceneLoader("Loading", "MainScene"));
 	}
 }
 #endif
