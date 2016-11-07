@@ -16,7 +16,7 @@ public class ProjectScheme : Scheme {
 		AddController(new Save(), new JsonDataSave());
 		AddController(new StateExample(), new ConcreteStateExample());
 		AddController(new Scene(), new AsyncSceneLoader("Loading", "MainScene"));
-		AddController(new Inventory(), new LocalInventory<TestItem, TestPack, TestItemHolder>());
+		AddController(new Inventory(), new SimpleInventory());
 	}
 }
 #endif
