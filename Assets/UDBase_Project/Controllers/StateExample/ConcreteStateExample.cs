@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UDBase.Controllers.Config;
-using UDBase.Controllers.Save;
+using UDBase.Controllers.ConfigSystem;
+using UDBase.Controllers.SaveSystem;
 using UDBase.Utils.Json;
 
 public class ConcreteStateExample : IStateExample {

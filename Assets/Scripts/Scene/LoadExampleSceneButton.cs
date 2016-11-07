@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UDBase.Controllers.Scene.UI;
-using UDBase.Controllers.Scene;
+using UDBase.Controllers.SceneSystem.UI;
+using UDBase.Controllers.SceneSystem;
 
 [RequireComponent(typeof(Button))]
 public class LoadExampleSceneButton : SceneParamLoadButton<Scenes> {}
