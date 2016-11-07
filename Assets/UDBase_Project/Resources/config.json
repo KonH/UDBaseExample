@@ -3,6 +3,16 @@
 	"Value": "some_string"
 }
 
-other_node 
+inventory_source
 {
+	"Items": 
+	[
+		{"Name": "item_1"},
+		{"Name": "item_2"},
+		{"Name": "item_3"}
+	],
+	"Packs":
+	[
+		{"Name": "money"}
+	]
 }

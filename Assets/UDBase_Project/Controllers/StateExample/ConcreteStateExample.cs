@@ -20,6 +20,7 @@ public class ConcreteStateExample : IStateExample {
 	}
 
 	public void Init() {}
+	public void PostInit() {}
 
 	ConcreteStateExampleConfig _config = null;
 	ConcreteStateExampleSave   _save   = null;

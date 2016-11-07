@@ -7,9 +7,9 @@ namespace UDBase.Editor {
 		[MenuItem("UDBase/Schemes/Default")]
 		static void SwitchToScheme_Default() {
 			SchemesTool.SwitchScheme("Default");
-		}		[MenuItem("UDBase/Schemes/ConfigSaveScheme")]
-		static void SwitchToScheme_ConfigSaveScheme() {
-			SchemesTool.SwitchScheme("ConfigSaveScheme");
+		}		[MenuItem("UDBase/Schemes/TestScheme")]
+		static void SwitchToScheme_TestScheme() {
+			SchemesTool.SwitchScheme("TestScheme");
 		}
 	}
 }

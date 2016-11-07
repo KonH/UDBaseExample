@@ -483,7 +483,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1042032534}
   m_HandleRect: {fileID: 1042032533}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -599,8 +599,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 528577668}
   m_HandleRect: {fileID: 528577667}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.17783277
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1601,6 +1601,7 @@ GameObject:
   - 222: {fileID: 1060108874}
   - 114: {fileID: 1060108873}
   - 114: {fileID: 1060108872}
+  - 114: {fileID: 1060108875}
   m_Layer: 5
   m_Name: AddButton
   m_TagString: Untagged
@@ -1701,6 +1702,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1060108870}
+--- !u!114 &1060108875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060108870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd76fae1cb9e4b63b4b7e95cc0894e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HolderName: player
+  PackName: money
+  Count: 100
 --- !u!1 &1347767012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,8 +2494,9 @@ GameObject:
   - 222: {fileID: 1738308195}
   - 114: {fileID: 1738308194}
   - 114: {fileID: 1738308193}
+  - 114: {fileID: 1738308196}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BalanceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2561,6 +2577,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1738308191}
+--- !u!114 &1738308196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1738308191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb6730465ec74ecebacfc646f379b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FormatLine: 'Balance: {0}'
+  HolderName: player
+  PackName: money
 --- !u!1 &1787697835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,7 +3159,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 300.00003}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2089056439
@@ -3162,6 +3192,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}

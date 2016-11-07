@@ -1,4 +1,4 @@
-#if Scheme_ConfigSaveScheme
+#if Scheme_TestScheme
 using UnityEngine;
 using System.Collections;
 using UDBase.Common;
@@ -6,6 +6,7 @@ using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
 using UDBase.Controllers.SceneSystem;
+using UDBase.Controllers.InventorySystem;
 
 public class ProjectScheme : Scheme {
 
@@ -15,6 +16,7 @@ public class ProjectScheme : Scheme {
 		AddController(new Save(), new JsonDataSave());
 		AddController(new StateExample(), new ConcreteStateExample());
 		AddController(new Scene(), new AsyncSceneLoader("Loading", "MainScene"));
+		AddController(new Inventory(), new LocalInventory<TestItem, TestPack, TestItemHolder>());
 	}
 }
 #endif
