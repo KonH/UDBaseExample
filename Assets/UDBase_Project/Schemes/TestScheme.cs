@@ -13,7 +13,7 @@ public class ProjectScheme : Scheme {
 	public ProjectScheme() {
 		AddController(new Log(), new UnityLog(), new VisualLog());
 		AddController(new Config(), new JsonResourcesConfig());
-		AddController(new Save(), new JsonDataSave());
+		AddController(new Save(), new JsonDataSave(true));
 		AddController(new StateExample(), new ConcreteStateExample());
 		AddController(new Scene(), new AsyncSceneLoader("Loading", "MainScene"));
 		AddController(new Inventory(), new SimpleInventory());
