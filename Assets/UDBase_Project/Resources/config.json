@@ -7,12 +7,12 @@ inventory_source
 {
 	"Items": 
 	[
-		{"Name": "item_1"},
-		{"Name": "item_2"},
-		{"Name": "item_3"}
+		{"name": "item_1"},
+		{"name": "item_2"},
+		{"name": "item_3"}
 	],
 	"Packs":
 	[
-		{"Name": "money"}
+		{"name": "money"}
 	]
 }
