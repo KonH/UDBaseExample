@@ -14,5 +14,30 @@ inventory_source
 	"Packs":
 	[
 		{"name": "money"}
+	],
+	"Holders":
+	[
+		{
+			"name": "player",
+			"items": 
+			[
+				"item_1"
+			],
+			"packs": 
+			[
+				{"name": "money", "count": "100"}
+			]
+		},
+		{
+			"name": "market",  
+			"items": 
+			[
+				"item_2", "item_3"
+			],
+			"packs":
+			[
+				{"name": "money", "count": "1000"}
+			]
+		}
 	]
 }
