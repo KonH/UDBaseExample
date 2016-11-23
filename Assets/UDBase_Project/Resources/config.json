@@ -5,17 +5,17 @@
 
 inventory_source
 {
-	"Items": 
+	"items": 
 	[
 		{"name": "item_1"},
 		{"name": "item_2"},
 		{"name": "item_3"}
 	],
-	"Packs":
+	"packs":
 	[
 		{"name": "money"}
 	],
-	"Holders":
+	"holders":
 	[
 		{
 			"name": "player",
