@@ -22,8 +22,10 @@ public class ProjectScheme : Scheme {
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
 
-		var infos = new IInfoBase[1];
-		infos[0] = new ConfigInfoHolder<TestData>();
+		var infos = new IInfoBase[3];
+		infos[0] = new ConfigInfoHolder<CommonItem, CommonItemInfo>();
+		infos[1] = new ConfigInfoHolder<WeaponItem, WeaponItemInfo>();
+		infos[2] = new ConfigInfoHolder<ArmorItem, ArmorItemInfo>();
 		AddController(new Info(), infos);
 	}
 }

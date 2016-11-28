@@ -7,9 +7,9 @@ inventory_source
 {
 	"items": 
 	[
-		{"name": "item_1"},
-		{"name": "item_2"},
-		{"name": "item_3"}
+		{"name": "trash", "type": "common_item"},
+		{"name": "sword", "type": "weapon_item"},
+		{"name": "armor", "type": "armor_item"}
 	],
 	"packs":
 	[
@@ -21,23 +21,47 @@ inventory_source
 			"name": "player",
 			"items": 
 			[
-				"item_1"
+				"trash"
 			],
 			"packs": 
 			[
-				{"name": "money", "count": "100"}
+				{"name": "money", "count": "1000"}
 			]
 		},
 		{
 			"name": "market",  
 			"items": 
 			[
-				"item_2", "item_3"
+				"sword", "armor"
 			],
 			"packs":
 			[
-				{"name": "money", "count": "1000"}
+				{"name": "money", "count": "100"}
 			]
 		}
+	]
+}
+
+common_item
+{
+	"items":
+	[
+		{"name": "trash", "price": "10"}
+	]
+}
+
+weapon_item
+{
+	"items":
+	[
+		{"name": "sword", "price": "100", "damage": "10"}
+	]
+}
+
+armor_item
+{
+	"items":
+	[
+		{"name": "armor", "price": "200", "maxDurability": "50"}
 	]
 }
