@@ -17,7 +17,7 @@ public class ProjectScheme : Scheme {
 		AddController<Config>   (new JsonResourcesConfig());
 		AddController<Save>     (new JsonDataSave(true));
 		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
-		AddController<Inventory>(new SimpleInventory());
+		AddController<Inventory>(new CustomInventory());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
