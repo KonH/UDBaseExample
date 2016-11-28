@@ -12,12 +12,15 @@ using UDBase.Controllers.InfoSystem;
 public class ProjectScheme : Scheme {
 
 	public ProjectScheme() {
-		AddController(new Log(), new UnityLog(), new VisualLog());
-		AddController(new Config(), new JsonResourcesConfig());
-		AddController(new Save(), new JsonDataSave(true));
-		AddController(new StateExample(), new ConcreteStateExample());
-		AddController(new Scene(), new AsyncSceneLoader("Loading", "MainScene"));
-		AddController(new Inventory(), new SimpleInventory());
+		// Default controllers
+		AddController<Log>      (new UnityLog(), new VisualLog());
+		AddController<Config>   (new JsonResourcesConfig());
+		AddController<Save>     (new JsonDataSave(true));
+		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
+		AddController<Inventory>(new SimpleInventory());
+
+		// Examples
+		AddController<StateExample>(new ConcreteStateExample());
 
 		var infos = new IInfoBase[1];
 		infos[0] = new ConfigInfoHolder<TestData>();
