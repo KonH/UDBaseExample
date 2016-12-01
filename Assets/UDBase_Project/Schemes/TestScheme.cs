@@ -12,21 +12,29 @@ using UDBase.Controllers.InfoSystem;
 public class ProjectScheme : Scheme {
 
 	public ProjectScheme() {
+		var config = 
+			new JsonResourcesConfig().
+			Add<ConcreteStateExampleConfig>("example_node");
+
+		var save = 
+			new JsonDataSave(true).
+			Add<ConcreteStateExampleSave>("save_node");
+
 		// Default controllers
 		AddController<Log>      (new UnityLog(), new VisualLog());
-		AddController<Config>   (new JsonResourcesConfig());
-		AddController<Save>     (new JsonDataSave(true));
+		AddController<Config>   (config);
+		AddController<Save>     (save);
 		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
-		AddController<Inventory>(new CustomInventory());
+		//AddController<Inventory>(new CustomInventory());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
 
-		var infos = new IInfoBase[3];
-		infos[0] = new ConfigInfoHolder<CommonItem, CommonItemInfo>();
-		infos[1] = new ConfigInfoHolder<WeaponItem, WeaponItemInfo>();
-		infos[2] = new ConfigInfoHolder<ArmorItem, ArmorItemInfo>();
-		AddController(new Info(), infos);
+		//var infos = new IInfoBase[3];
+		//infos[0] = new ConfigInfoHolder<CommonItem, CommonItemInfo>();
+		//infos[1] = new ConfigInfoHolder<WeaponItem, WeaponItemInfo>();
+		//infos[2] = new ConfigInfoHolder<ArmorItem, ArmorItemInfo>();
+		//AddController(new Info(), infos);
 	}
 }
 #endif

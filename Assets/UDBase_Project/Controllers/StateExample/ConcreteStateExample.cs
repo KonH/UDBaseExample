@@ -4,20 +4,15 @@ using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
 using UDBase.Utils.Json;
 
+public class ConcreteStateExampleConfig {
+	public string Value = "";
+}
+
+public class ConcreteStateExampleSave {
+	public int IntValue = 0;
+}
+
 public class ConcreteStateExample : IStateExample {
-
-	class ConcreteStateExampleConfig:IJsonNode {
-
-		public string Name { get { return "example_node"; } }
-
-		public string Value = "";
-	}
-
-	class ConcreteStateExampleSave:IJsonNode {
-		public string Name { get { return "save_node"; } }
-
-		public int IntValue = 0;
-	}
 
 	public void Init() {}
 	public void PostInit() {}
