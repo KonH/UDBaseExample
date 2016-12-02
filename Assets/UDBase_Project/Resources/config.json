@@ -8,18 +8,18 @@
 	{
 		"items": 
 		[
-			{"name": "trash", "type": "common_item"},
-			{"name": "sword", "type": "weapon_item"},
-			{"name": "armor", "type": "armor_item"}
+			"trash": {"type": "common_item"},
+			"sword": {"type": "weapon_item"},
+			"armor": {"type": "armor_item"}
 		],
 		"packs":
 		[
-			{"name": "money"}
+			"money"
 		],
 		"holders":
 		[
+			"player":
 			{
-				"name": "player",
 				"items": 
 				[
 					"trash"
@@ -29,8 +29,8 @@
 					{"name": "money", "count": "1000"}
 				]
 			},
-			{
-				"name": "market",  
+			"market":
+			{  
 				"items": 
 				[
 					"sword", "armor"
@@ -42,28 +42,17 @@
 			}
 		]
 	},
-
+		
 	"common_item":
-	{
-		"items":
-		[
-			{"name": "trash", "price": "10"}
-		]
-	},
-
+	[
+		"trash": {"price": "10"}
+	],
 	"weapon_item":
-	{
-		"items":
-		[
-			{"name": "sword", "price": "100", "damage": "10"}
-		]
-	},
-
+	[
+		"sword:" {"price": "100", "damage": "10"}
+	],
 	"armor_item":
-	{
-		"items":
-		[
-			{"name": "armor", "price": "200", "maxDurability": "50"}
-		]
-	}
+	[
+		"armor": {"price": "200", "max_durability": "50"}
+	]
 }
