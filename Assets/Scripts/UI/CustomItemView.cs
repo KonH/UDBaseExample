@@ -2,22 +2,22 @@
 using System.Collections;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.InventorySystem.UI;
-using UDBase.Controllers.InfoSystem;
+using UDBase.Controllers.ConfigSystem;
 
-public class CustomItemView : ItemView<CustomItem> {
+public class CustomItemView : ItemView {
 
-	public override void Init(CustomItem item) {
+	public override void Init(InventoryItem item) {
 		if( NameText ) {
 			var itemInfo = GetItemInfo(item);
 			NameText.text = string.Format("{0} ({1})", item.Name, itemInfo);
 		}
 	}
 
-	string GetItemInfo(CustomItem item) {
+	string GetItemInfo(InventoryItem item) {
 		switch( item.Type ) {
 			case ItemInfo.Common:
 			{
-				var itemInfo = Info.GetInfo<CommonItem>(item.Name);	
+				var itemInfo = Config.GetItem<CommonItem>(item.Name);	
 				if( itemInfo != null ) {
 					return "price: " + itemInfo.Price;
 				}
@@ -26,7 +26,7 @@ public class CustomItemView : ItemView<CustomItem> {
 			
 			case ItemInfo.Weapon:
 				{
-					var itemInfo = Info.GetInfo<WeaponItem>(item.Name);	
+					var itemInfo = Config.GetItem<WeaponItem>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, damage: {1})", itemInfo.Price, itemInfo.Damage);
 					}
@@ -35,10 +35,11 @@ public class CustomItemView : ItemView<CustomItem> {
 
 			case ItemInfo.Armor:
 				{
-					var itemInfo = Info.GetInfo<ArmorItem>(item.Name);	
+					var armorState = item.As<ArmorState>();
+					var itemInfo = Config.GetItem<ArmorItem>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, durability: {1}/{2})", 
-							itemInfo.Price, item.Durability, itemInfo.MaxDurability);
+							itemInfo.Price, armorState.Durability, itemInfo.MaxDurability);
 					}
 				}
 			break;

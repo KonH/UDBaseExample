@@ -2169,7 +2169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shop
+  m_Text: Market
 --- !u!222 &1421866791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2311,7 +2311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557851530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cdbec63f49654fe6b16a4489d1a254e, type: 3}
+  m_Script: {fileID: 11500000, guid: a0894fb1f3b1248a38a71d36f7a34ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPrefab: {fileID: 114000011807557258, guid: 24fb016aec10842c4877b0e6bb2b59dc,
@@ -3223,7 +3223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2089056439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cdbec63f49654fe6b16a4489d1a254e, type: 3}
+  m_Script: {fileID: 11500000, guid: a0894fb1f3b1248a38a71d36f7a34ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPrefab: {fileID: 114000011807557258, guid: 24fb016aec10842c4877b0e6bb2b59dc,
