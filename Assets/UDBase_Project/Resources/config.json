@@ -1,25 +1,25 @@
 ﻿{
 	"example_node":
 	{
-		"Value": "some_string"
+		"value": "some_string"
 	},
 
 	"inventory_source":
 	{
 		"items": 
 		[
-			"trash": {"type": "common_item"},
-			"sword": {"type": "weapon_item"},
-			"armor": {"type": "armor_item"}
+			{"name": "trash", "type": "common_item"},
+			{"name": "sword", "type": "weapon_item"},
+			{"name": "armor", "type": "armor_item"}
 		],
 		"packs":
 		[
-			"money"
+			{"name": "money"}
 		],
 		"holders":
 		[
-			"player":
 			{
+				"name": "player",
 				"items": 
 				[
 					"trash"
@@ -29,8 +29,8 @@
 					{"name": "money", "count": "1000"}
 				]
 			},
-			"market":
-			{  
+			{
+				"name": "market",
 				"items": 
 				[
 					"sword", "armor"
@@ -44,15 +44,15 @@
 	},
 		
 	"common_item":
-	[
+	{
 		"trash": {"price": "10"}
-	],
+	},
 	"weapon_item":
-	[
-		"sword:" {"price": "100", "damage": "10"}
-	],
+	{
+		"sword": {"price": "100", "damage": "10"}
+	},
 	"armor_item":
-	[
+	{
 		"armor": {"price": "200", "max_durability": "50"}
-	]
+	}
 }
