@@ -3,12 +3,15 @@ using System.Collections;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
 using UDBase.Utils.Json;
+using Newtonsoft.Json;
 
 public class ConcreteStateExampleConfig {
+	[JsonProperty("value")]
 	public string Value = "";
 }
 
 public class ConcreteStateExampleSave {
+	[JsonProperty("int_value")]
 	public int IntValue = 0;
 }
 
