@@ -2,51 +2,23 @@
 using System.Collections;
 using Newtonsoft.Json;
 
-public static class ItemInfo {
+public static class ItemTypes {
 	public const string Common = "common_item";
 	public const string Weapon = "weapon_item";
 	public const string Armor  = "armor_item";
 }
 
-public class CommonItem {
+public class CommonItemInfo {
 	[JsonProperty("price")]
 	public int Price { get; private set; }
 }
 
-public class WeaponItem:CommonItem {
+public class WeaponItemInfo:CommonItemInfo {
 	[JsonProperty("damage")]
 	public int Damage { get; private set; }
 }
 
-public class ArmorItem:CommonItem {
+public class ArmorItemInfo:CommonItemInfo {
 	[JsonProperty("max_durability")]
 	public int MaxDurability { get; private set; }
 }
-
-
-// TODO: Use?
-/*
-public class ArmorItemState: InventoryItem, IClonableItem<CustomItem> {
-
-	public ArmorItemState(string name, string type, int durability):base(name, type) {
-		Durability = durability;
-	}
-
-	public override void Init() {
-		if ( type == ItemInfo.Armor ) {
-			var info = Info.GetInfo<ArmorItem>(name);
-			durability = info.MaxDurability;
-		}
-	}
-
-	public override void Load() {
-		if ( type == ItemInfo.Armor ) {
-			var info = Info.GetInfo<ArmorItem>(name);
-			durability = Mathf.Min(durability, info.MaxDurability);
-		}
-	}
-
-	public new ArmorItemState Clone() {
-		return new CustomItem(Name, Type, Durability);
-	}
-}*/

@@ -15,28 +15,28 @@ public class CustomItemView : ItemView {
 
 	string GetItemInfo(InventoryItem item) {
 		switch( item.Type ) {
-			case ItemInfo.Common:
+			case ItemTypes.Common:
 			{
-				var itemInfo = Config.GetItem<CommonItem>(item.Name);	
+				var itemInfo = Config.GetItem<CommonItemInfo>(item.Name);	
 				if( itemInfo != null ) {
 					return "price: " + itemInfo.Price;
 				}
 			}
 			break;
 			
-			case ItemInfo.Weapon:
+			case ItemTypes.Weapon:
 				{
-					var itemInfo = Config.GetItem<WeaponItem>(item.Name);	
+					var itemInfo = Config.GetItem<WeaponItemInfo>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, damage: {1})", itemInfo.Price, itemInfo.Damage);
 					}
 				}
 			break;
 
-			case ItemInfo.Armor:
+			case ItemTypes.Armor:
 				{
-					var armorState = item.As<ArmorState>();
-					var itemInfo = Config.GetItem<ArmorItem>(item.Name);	
+					var armorState = item.As<ArmorItem>();
+					var itemInfo = Config.GetItem<ArmorItemInfo>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, durability: {1}/{2})", 
 							itemInfo.Price, armorState.Durability, itemInfo.MaxDurability);

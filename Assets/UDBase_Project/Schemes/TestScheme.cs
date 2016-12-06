@@ -13,23 +13,27 @@ public class ProjectScheme : Scheme {
 	public ProjectScheme() {
 		var config = 
 			new JsonResourcesConfig().
-			Add<ConcreteStateExampleConfig>("example_node").
-			Add<ItemSourceConfigNode>("inventory_source").
-			AddList<CommonItem>(ItemInfo.Common).
-			AddList<WeaponItem>(ItemInfo.Weapon).
-			AddList<ArmorItem>(ItemInfo.Armor);
+			AddNode<ConcreteStateExampleConfig>("example_node").
+			AddNode<ItemSourceConfigNode>("inventory_source").
+			AddList<CommonItemInfo>(ItemTypes.Common).
+			AddList<WeaponItemInfo>(ItemTypes.Weapon).
+			AddList<ArmorItemInfo>(ItemTypes.Armor);
 
 		var save = 
 			new JsonDataSave(true).
-			Add<ConcreteStateExampleSave>("save_node").
-			Add<InventorySaveNode>("inventory");
+			AddNode<ConcreteStateExampleSave>("save_node").
+			AddNode<InventorySaveNode>("inventory");
+
+		var inventory =
+			new BasicInventory().
+			AddType<ArmorItem>(ItemTypes.Armor);
 
 		// Default controllers
 		AddController<Log>      (new UnityLog(), new VisualLog());
 		AddController<Config>   (config);
 		AddController<Save>     (save);
 		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
-		AddController<Inventory>(new BasicInventory());
+		AddController<Inventory>(inventory);
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
