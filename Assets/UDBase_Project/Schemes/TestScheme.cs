@@ -12,7 +12,7 @@ public class ProjectScheme : Scheme {
 
 	public ProjectScheme() {
 		var config = 
-			new JsonResourcesConfig().
+			new FsJsonResourcesConfig().
 			AddNode<ConcreteStateExampleConfig>("example_node").
 			AddNode<ItemSourceConfigNode>("inventory_source").
 			AddList<CommonItemInfo>(ItemTypes.Common).
@@ -20,7 +20,7 @@ public class ProjectScheme : Scheme {
 			AddList<ArmorItemInfo>(ItemTypes.Armor);
 
 		var save = 
-			new JsonDataSave(true).
+			new FsJsonDataSave(true).
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory");
 

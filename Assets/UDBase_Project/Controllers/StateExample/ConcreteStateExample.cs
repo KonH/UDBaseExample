@@ -2,16 +2,15 @@
 using System.Collections;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
-using UDBase.Utils.Json;
-using Newtonsoft.Json;
+using FullSerializer;
 
 public class ConcreteStateExampleConfig {
-	[JsonProperty("value")]
+	[fsProperty("value")]
 	public string Value = "";
 }
 
 public class ConcreteStateExampleSave {
-	[JsonProperty("int_value")]
+	[fsProperty("int_value")]
 	public int IntValue = 0;
 }
 

@@ -2,11 +2,11 @@
 using System.Collections;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.ConfigSystem;
-using Newtonsoft.Json;
+using FullSerializer;
 
 public class ArmorItem:InventoryItem {
-
-	[JsonProperty("durability")]
+	
+	[fsProperty("durability")]
 	public int Durability = 0;
 
 	public ArmorItem() {}

@@ -26,7 +26,7 @@
 				],
 				"packs": 
 				[
-					{"name": "money", "count": "1000"}
+					{"name": "money", "count": 1000}
 				]
 			},
 			{
@@ -37,7 +37,7 @@
 				],
 				"packs":
 				[
-					{"name": "money", "count": "100"}
+					{"name": "money", "count": 100}
 				]
 			}
 		]
@@ -45,14 +45,14 @@
 		
 	"common_item":
 	{
-		"trash": {"price": "10"}
+		"trash": {"price": 10}
 	},
 	"weapon_item":
 	{
-		"sword": {"price": "100", "damage": "10"}
+		"sword": {"price": 100, "damage": 10}
 	},
 	"armor_item":
 	{
-		"armor": {"price": "200", "max_durability": "50"}
+		"armor": {"price": 200, "max_durability": 50}
 	}
 }

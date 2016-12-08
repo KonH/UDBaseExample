@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Newtonsoft.Json;
+using FullSerializer;
 
 public static class ItemTypes {
 	public const string Common = "common_item";
@@ -9,16 +9,16 @@ public static class ItemTypes {
 }
 
 public class CommonItemInfo {
-	[JsonProperty("price")]
+	[fsProperty("price")]
 	public int Price { get; private set; }
 }
 
 public class WeaponItemInfo:CommonItemInfo {
-	[JsonProperty("damage")]
+	[fsProperty("damage")]
 	public int Damage { get; private set; }
 }
 
 public class ArmorItemInfo:CommonItemInfo {
-	[JsonProperty("max_durability")]
+	[fsProperty("max_durability")]
 	public int MaxDurability { get; private set; }
 }

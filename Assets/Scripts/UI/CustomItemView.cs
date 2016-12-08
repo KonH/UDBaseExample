@@ -35,7 +35,7 @@ public class CustomItemView : ItemView {
 
 			case ItemTypes.Armor:
 				{
-					var armorState = item.As<ArmorItem>();
+					var armorState = item as ArmorItem;
 					var itemInfo = Config.GetItem<ArmorItemInfo>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, durability: {1}/{2})", 
