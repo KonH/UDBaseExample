@@ -129,7 +129,7 @@ PlayerSettings:
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
-  apiCompatibilityLevel: 1
+  apiCompatibilityLevel: 2
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
@@ -433,8 +433,8 @@ PlayerSettings:
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
     1: Scheme_TestScheme;Scheme_Declared
-    4: Scheme_ConfigSaveScheme;Scheme_Declared
-    7: Scheme_ConfigSaveScheme;Scheme_Declared
+    4: Scheme_TestScheme;Scheme_Declared
+    7: Scheme_TestScheme;Scheme_Declared
     13: Scheme_TestScheme;Scheme_Declared
   platformArchitecture:
     iOS: 2
