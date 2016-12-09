@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 162}
   - component: {fileID: 161}
   m_Layer: 5
-  m_Name: Content
+  m_Name: MarketContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 181}
   - component: {fileID: 180}
   m_Layer: 5
-  m_Name: Content
+  m_Name: PlayerContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2403,6 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0894fb1f3b1248a38a71d36f7a34ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Transition: {fileID: 180}
   ItemPrefab: {fileID: 114000011807557258, guid: 24fb016aec10842c4877b0e6bb2b59dc,
     type: 2}
   HolderName: market
@@ -2845,6 +2846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0894fb1f3b1248a38a71d36f7a34ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Transition: {fileID: 161}
   ItemPrefab: {fileID: 114000011807557258, guid: 24fb016aec10842c4877b0e6bb2b59dc,
     type: 2}
   HolderName: player
@@ -3024,7 +3026,7 @@ Prefab:
     - target: {fileID: 224000013594816594, guid: 24fb016aec10842c4877b0e6bb2b59dc,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 216.11462
+      value: 232.07101
       objectReference: {fileID: 0}
     - target: {fileID: 224000013594816594, guid: 24fb016aec10842c4877b0e6bb2b59dc,
         type: 2}
@@ -3034,7 +3036,7 @@ Prefab:
     - target: {fileID: 224000013594816594, guid: 24fb016aec10842c4877b0e6bb2b59dc,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 432.22925
+      value: 464.14203
       objectReference: {fileID: 0}
     - target: {fileID: 224000013594816594, guid: 24fb016aec10842c4877b0e6bb2b59dc,
         type: 2}

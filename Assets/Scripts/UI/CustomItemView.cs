@@ -6,11 +6,12 @@ using UDBase.Controllers.ConfigSystem;
 
 public class CustomItemView : ItemView {
 
-	public override void Init(InventoryItem item) {
+	public override void Init(HolderItemsView owner, InventoryItem item) {
 		if( NameText ) {
 			var itemInfo = GetItemInfo(item);
 			NameText.text = string.Format("{0} ({1})", item.Name, itemInfo);
 		}
+		InitControls(owner, item);
 	}
 
 	string GetItemInfo(InventoryItem item) {

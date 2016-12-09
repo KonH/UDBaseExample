@@ -26,7 +26,7 @@
 				],
 				"packs": 
 				[
-					{"name": "money", "count": 1000}
+					{"name": "money", "count": 100}
 				]
 			},
 			{
@@ -37,7 +37,7 @@
 				],
 				"packs":
 				[
-					{"name": "money", "count": 100}
+					{"name": "money", "count": 10000}
 				]
 			}
 		]

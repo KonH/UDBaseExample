@@ -24,8 +24,10 @@ public class ProjectScheme : Scheme {
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory");
 
+		var transition = new TradeTransitionHelper("money", ItemHelper.GetPriceSelector);
+
 		var inventory =
-			new BasicInventory().
+			new BasicInventory(transition).
 			AddType<ArmorItem>(ItemTypes.Armor);
 
 		// Default controllers
