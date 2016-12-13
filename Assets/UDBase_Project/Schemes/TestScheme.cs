@@ -20,7 +20,7 @@ public class ProjectScheme : Scheme {
 			AddList<ArmorItemInfo>(ItemTypes.Armor);
 
 		var save = 
-			new FsJsonDataSave(true).
+			new FsJsonDataSave(true, true).
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory");
 
