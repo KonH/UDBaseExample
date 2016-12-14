@@ -14,10 +14,6 @@ public class CustomItemView : ItemView {
 		Events.Subscribe<ItemChanged>(this, OnItemChanged);
 	}
 
-	void OnDisable() {
-		Events.Unsubscribe<ItemChanged>(OnItemChanged);
-	}
-
 	void OnItemChanged(ItemChanged e) {
 		if( _owner && (_item != null) ) {
 			if( (e.HolderName == _owner.HolderName) && (e.Item.Name == _item.Name) ) {
