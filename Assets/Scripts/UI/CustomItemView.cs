@@ -3,10 +3,32 @@ using System.Collections;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.InventorySystem.UI;
 using UDBase.Controllers.ConfigSystem;
+using UDBase.Controllers.EventSystem;
 
 public class CustomItemView : ItemView {
 
+	HolderItemsView _owner = null;
+	InventoryItem   _item  = null;
+
+	void OnEnable() {
+		Events.Subscribe<ItemChanged>(this, OnItemChanged);
+	}
+
+	void OnDisable() {
+		Events.Unsubscribe<ItemChanged>(OnItemChanged);
+	}
+
+	void OnItemChanged(ItemChanged e) {
+		if( _owner && (_item != null) ) {
+			if( (e.HolderName == _owner.HolderName) && (e.Item.Name == _item.Name) ) {
+				Init(_owner, e.Item);
+			}
+		}
+	}
+
 	public override void Init(HolderItemsView owner, InventoryItem item) {
+		_owner = owner;
+		_item  = item;
 		if( NameText ) {
 			var itemInfo = GetItemInfo(item);
 			NameText.text = string.Format("{0} ({1})", item.Name, itemInfo);

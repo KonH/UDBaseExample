@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.InventorySystem.UI;
-using UDBase.Controllers.SceneSystem;
+using UDBase.Controllers.EventSystem;
 
 public class ArmorItemUse : ItemControl {
 	public Button UseButton = null;
@@ -27,13 +27,11 @@ public class ArmorItemUse : ItemControl {
 		var armorItem = _item as ArmorItem;
 		if( armorItem != null ) {
 			armorItem.Durability-= 10;
+			Events.Fire<ItemChanged>(new ItemChanged(_holderName, _item));
 			Inventory.SaveChanges();
 		}
 		if( armorItem.Durability <= 0 ) {
 			Inventory.RemoveItem(_holderName, _item);
 		}
-
-		// Temp
-		Scene.ReloadScene();
 	}
 }
