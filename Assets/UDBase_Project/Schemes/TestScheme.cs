@@ -18,14 +18,16 @@ public class ProjectScheme : Scheme {
 			AddNode<ItemSourceConfigNode>("inventory_source").
 			AddList<CommonItemInfo>(ItemTypes.Common).
 			AddList<WeaponItemInfo>(ItemTypes.Weapon).
-			AddList<ArmorItemInfo>(ItemTypes.Armor);
+			AddList<ArmorItemInfo>(ItemTypes.Armor).
+			AddList<PackInfo>(ItemTypes.Packs);
 
 		var save = 
 			new FsJsonDataSave(true, true).
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory");
 
-		var transition = new TradeTransitionHelper("money", ItemHelper.GetPriceSelector);
+		var transition = new TradeTransitionHelper(
+			ItemTypes.Money, ItemHelper.GetItemPriceSelector, ItemHelper.GetPackPriceSelector);
 
 		var inventory =
 			new BasicInventory(transition).

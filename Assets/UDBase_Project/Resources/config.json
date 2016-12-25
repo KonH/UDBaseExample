@@ -14,7 +14,8 @@
 		],
 		"packs":
 		[
-			{"name": "money"}
+			{"name": "money"},
+			{"name": "potions" }
 		],
 		"holders":
 		[
@@ -37,7 +38,8 @@
 				],
 				"packs":
 				[
-					{"name": "money", "count": 10000}
+					{"name": "money", "count": 10000},
+					{"name": "potions", "count": 10}
 				]
 			}
 		]
@@ -54,5 +56,9 @@
 	"armor_item":
 	{
 		"armor": {"price": 200, "max_durability": 50}
+	},
+	"packs":
+	{
+		"potions": {"price": 50}
 	}
 }

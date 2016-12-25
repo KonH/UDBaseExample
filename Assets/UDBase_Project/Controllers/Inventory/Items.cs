@@ -5,9 +5,12 @@ using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.InventorySystem;
 
 public static class ItemTypes {
-	public const string Common = "common_item";
-	public const string Weapon = "weapon_item";
-	public const string Armor  = "armor_item";
+	public const string Common  = "common_item";
+	public const string Weapon  = "weapon_item";
+	public const string Armor   = "armor_item";
+	public const string Packs   = "packs";
+	public const string Money   = "money";
+	public const string Potions = "potions"; 
 }
 
 public class CommonItemInfo {
@@ -25,9 +28,18 @@ public class ArmorItemInfo:CommonItemInfo {
 	public int MaxDurability { get; private set; }
 }
 
+public class PackInfo {
+	[fsProperty("price")]
+	public int Price { get; private set; }
+}
+
 public static class ItemHelper {
-	public static int GetPriceSelector(InventoryItem item) {
+	public static int GetItemPriceSelector(InventoryItem item) {
 		return GetItemPrice(item.Type, item.Name);
+	}
+
+	public static int GetPackPriceSelector(InventoryPack pack) {
+		return GetPackPrice(pack.Name);
 	}
 
 	static int GetItemPrice(string type, string name) {
@@ -39,6 +51,14 @@ public static class ItemHelper {
 		}
 		if( itemInfo != null ) {
 			return itemInfo.Price;
+		}
+		return 0;
+	}
+
+	static int GetPackPrice(string name) {
+		PackInfo packInfo = Config.GetItem<PackInfo>(name);
+		if( packInfo != null ) {
+			return packInfo.Price;
 		}
 		return 0;
 	}
