@@ -8,6 +8,7 @@ using UDBase.Controllers.SaveSystem;
 using UDBase.Controllers.SceneSystem;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.EventSystem;
+using UDBase.Controllers.ContentSystem;
 
 public class ProjectScheme : Scheme {
 
@@ -40,6 +41,7 @@ public class ProjectScheme : Scheme {
 		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
 		AddController<Inventory>(inventory);
 		AddController<Events>   (new EventController());
+		AddController<Content>  (new DirectContentController());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
