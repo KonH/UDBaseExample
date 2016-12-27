@@ -24,6 +24,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e00326f364c4280a4de132f44ade5b, type: 3}
   m_Name: ContentItem
   m_EditorClassIdentifier: 
-  LoadType: 1
-  ContentObject: {fileID: 1517269374893154, guid: 80cf14939929c47a093643e213c59fae,
-    type: 2}
+  LoadType: 2
+  Asset: {fileID: 0}
+  BundleName: testbundle
+  AssetName: ContentCube
