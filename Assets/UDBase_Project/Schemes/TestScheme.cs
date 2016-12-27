@@ -41,7 +41,9 @@ public class ProjectScheme : Scheme {
 		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
 		AddController<Inventory>(inventory);
 		AddController<Events>   (new EventController());
-		AddController<Content>  (new DirectContentController());
+		AddController<Content>  (
+			new DirectContentController(), 
+			new AssetBundleContentController(AssetBundleMode.WebServer, "http://127.0.0.1:8080"));
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
