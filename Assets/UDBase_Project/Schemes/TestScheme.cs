@@ -43,7 +43,7 @@ public class ProjectScheme : Scheme {
 		AddController<Events>   (new EventController());
 		AddController<Content>  (
 			new DirectContentController(), 
-			new AssetBundleContentController(AssetBundleMode.WebServer, "http://127.0.0.1:8080"));
+			new AssetBundleContentController(AssetBundleMode.WebServer, "https://konh.github.io/Data/UDB/AssetBundles"));
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
