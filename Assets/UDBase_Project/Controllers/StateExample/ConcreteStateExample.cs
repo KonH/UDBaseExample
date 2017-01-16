@@ -34,10 +34,7 @@ public class ConcreteStateExample : IStateExample {
 	public int GetSavedData()
 	{
 		_save = Save.GetNode<ConcreteStateExampleSave>();
-		if( _save != null ) {
-			return _save.IntValue;
-		}
-		return -1;
+		return _save.IntValue;
 	}
 
 	public void SetSavedData(int value) {
