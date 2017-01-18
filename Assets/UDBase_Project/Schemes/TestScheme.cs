@@ -1,6 +1,5 @@
 #if Scheme_TestScheme
 using UnityEngine;
-using System.Collections;
 using UDBase.Common;
 using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.ConfigSystem;
@@ -9,6 +8,7 @@ using UDBase.Controllers.SceneSystem;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.EventSystem;
 using UDBase.Controllers.ContentSystem;
+using UDBase.Controllers.UTime;
 
 public class ProjectScheme : Scheme {
 
@@ -44,6 +44,7 @@ public class ProjectScheme : Scheme {
 		AddController<Content>  (
 			new DirectContentController(), 
 			new AssetBundleContentController(AssetBundleMode.WebServer, "https://konh.github.io/Data/UDB/AssetBundles"));
+		AddController<UTime>(new LocalTime(), new NetworkTime());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
