@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Example_Inventory.unity
   - enabled: 1
     path: Assets/Scenes/Example_Content.unity
+  - enabled: 1
+    path: Assets/Scenes/Example_Time.unity
