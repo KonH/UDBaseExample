@@ -25,7 +25,8 @@ public class ProjectScheme : Scheme {
 		var save = 
 			new FsJsonDataSave(true, true).
 			AddNode<ConcreteStateExampleSave>("save_node").
-			AddNode<InventorySaveNode>("inventory");
+			AddNode<InventorySaveNode>("inventory").
+			AddNode<RewardNode>("reward");
 
 		var transition = new TradeTransitionHelper(
 			ItemTypes.Money, ItemHelper.GetItemPriceSelector, ItemHelper.GetPackPriceSelector);
@@ -44,7 +45,9 @@ public class ProjectScheme : Scheme {
 		AddController<Content>  (
 			new DirectContentController(), 
 			new AssetBundleContentController(AssetBundleMode.WebServer, "https://konh.github.io/Data/UDB/AssetBundles"));
-		AddController<UTime>(new LocalTime(), new NetworkTime());
+		AddController<UTime>(
+			new LocalTime(), 
+			new NetworkTime("http://104.236.100.182:8080/time")); // For non-production test cases
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
