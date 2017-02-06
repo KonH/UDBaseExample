@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum Scenes {
+﻿public enum Scenes {
 	MainScene,
 	Example
 }

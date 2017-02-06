@@ -13,6 +13,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Items:
   - {fileID: 114939232185576140}
+  - {fileID: 114320703697305146}
+--- !u!114 &114320703697305146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e00326f364c4280a4de132f44ade5b, type: 3}
+  m_Name: UIOverlay
+  m_EditorClassIdentifier: 
+  LoadType: 1
+  Asset: {fileID: 114857094364269482, guid: 48b507f42e90f4a71ac4f0b31ae3b493, type: 2}
+  BundleName: 
+  AssetName: 
 --- !u!114 &114939232185576140
 MonoBehaviour:
   m_ObjectHideFlags: 0
