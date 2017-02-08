@@ -1,8 +1,9 @@
 ﻿using UDBase.UI.Common;
 using UDBase.Controllers.ContentSystem;
+using UDBase.Controllers.LogSystem;
 
 public class ShowOverlayButton : ActionButton {
-    public UIElement DirectWindow;
+    public UIOverlay DirectWindow;
 	public ContentId ContentWindow;
 
 	public override bool IsInteractable() {
@@ -14,10 +15,18 @@ public class ShowOverlayButton : ActionButton {
 	}
 
     public override void OnClick() {
-		if( DirectWindow ) {
-			UIManager.Current.ShowOverlay(DirectWindow);
-		} else if( ContentWindow ) {
-        	UIManager.Current.ShowOverlay(ContentWindow);
-		}
+		AddOverlay();
     }
+
+	void AddOverlay() {
+		if( DirectWindow ) {
+			UIManager.Current.ShowOverlay(DirectWindow.gameObject, OnAnyOverlayClosed);
+		} else if( ContentWindow ) {
+        	UIManager.Current.ShowOverlay(ContentWindow, OnAnyOverlayClosed);
+		}
+	}
+
+	void OnAnyOverlayClosed() {
+		Log.Message("TestOverlay is closed.", LogTags.UI);
+	}
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Items:
   - {fileID: 114939232185576140}
-  - {fileID: 114320703697305146}
---- !u!114 &114320703697305146
+  - {fileID: 114934854085338550}
+--- !u!114 &114934854085338550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Name: UIOverlay
   m_EditorClassIdentifier: 
   LoadType: 1
-  Asset: {fileID: 114857094364269482, guid: 48b507f42e90f4a71ac4f0b31ae3b493, type: 2}
+  Asset: {fileID: 1666785806526368, guid: 48b507f42e90f4a71ac4f0b31ae3b493, type: 2}
   BundleName: 
   AssetName: 
 --- !u!114 &114939232185576140
