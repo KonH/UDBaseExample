@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Direction: 2
   Duration: 0.25
 --- !u!114 &114499033016205276
 MonoBehaviour:
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4001be17b58949f3a1d6302fbe2eae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideMode: 2
 --- !u!114 &114953110674339000
 MonoBehaviour:
   m_ObjectHideFlags: 1
