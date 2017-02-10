@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 0
   Duration: 0.25
 --- !u!114 &114499033016205276
 MonoBehaviour:
@@ -232,7 +232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoShow: 1
   InitialActive: 1
+  DisableOnHide: 1
   CacheAnimation: 1
+  Ordered: 0
   Group: 
   Childs: []
 --- !u!114 &114945007650288000

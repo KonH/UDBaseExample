@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114945007650288000}
   - component: {fileID: 114846889763000874}
   - component: {fileID: 225792261953353418}
-  - component: {fileID: 114444669636224050}
+  - component: {fileID: 114966098453306248}
   m_Layer: 5
   m_Name: UIDialog
   m_TagString: Untagged
@@ -240,19 +240,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Close
---- !u!114 &114444669636224050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1666785806526368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Direction: 2
-  Duration: 0.25
 --- !u!114 &114499033016205276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,7 +321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoShow: 1
   InitialActive: 1
+  DisableOnHide: 1
   CacheAnimation: 1
+  Ordered: 0
   Group: 
   Childs: []
 --- !u!114 &114923078490780074
@@ -409,6 +398,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114966098453306248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666785806526368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd548a583acac4395a525a82fbb34554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 0
+  Duration: 0.25
 --- !u!222 &222222574331666042
 CanvasRenderer:
   m_ObjectHideFlags: 1
