@@ -282,11 +282,14 @@ MonoBehaviour:
   InitialActive: 1
   DisableOnHide: 1
   CacheAnimation: 1
-  Ordered: 0
+  Ordered: 1
   Group: UI
   Childs:
   - {fileID: 1093418357}
   - {fileID: 1735740318}
+  - {fileID: 2033030176}
+  - {fileID: 184485009}
+  - {fileID: 479493724}
 --- !u!225 &108038867
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -371,6 +374,8 @@ GameObject:
   - component: {fileID: 184485007}
   - component: {fileID: 184485009}
   - component: {fileID: 184485008}
+  - component: {fileID: 184485011}
+  - component: {fileID: 184485010}
   m_Layer: 5
   m_Name: OrderControl
   m_TagString: Untagged
@@ -421,6 +426,30 @@ MonoBehaviour:
   Ordered: 0
   Group: 
   Childs: []
+--- !u!114 &184485010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184485006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 0
+  Duration: 0.25
+--- !u!225 &184485011
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184485006}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &270534923
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +775,8 @@ GameObject:
   - component: {fileID: 479493721}
   - component: {fileID: 479493720}
   - component: {fileID: 479493722}
+  - component: {fileID: 479493724}
+  - component: {fileID: 479493723}
   m_Layer: 5
   m_Name: HeaderText
   m_TagString: Untagged
@@ -824,6 +855,37 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &479493723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479493718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd548a583acac4395a525a82fbb34554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 0
+  Duration: 0.5
+--- !u!114 &479493724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479493718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24d2025ec3064e3092e72a7bedaf1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoShow: 1
+  InitialActive: 1
+  DisableOnHide: 1
+  CacheAnimation: 1
+  Ordered: 0
+  Group: 
+  Childs: []
 --- !u!1 &652567523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1139,8 @@ GameObject:
   - component: {fileID: 1093418354}
   - component: {fileID: 1093418353}
   - component: {fileID: 1093418357}
+  - component: {fileID: 1093418359}
+  - component: {fileID: 1093418358}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1207,6 +1271,30 @@ MonoBehaviour:
   Ordered: 0
   Group: 
   Childs: []
+--- !u!114 &1093418358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093418351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 0
+  Duration: 0.25
+--- !u!225 &1093418359
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093418351}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1213762240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1727,8 @@ GameObject:
   - component: {fileID: 1735740315}
   - component: {fileID: 1735740317}
   - component: {fileID: 1735740318}
+  - component: {fileID: 1735740320}
+  - component: {fileID: 1735740319}
   m_Layer: 5
   m_Name: OverlaysPanel
   m_TagString: Untagged
@@ -1739,6 +1829,30 @@ MonoBehaviour:
   Ordered: 0
   Group: 
   Childs: []
+--- !u!114 &1735740319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1735740313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 0
+  Duration: 0.25
+--- !u!225 &1735740320
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1735740313}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1798578615
 GameObject:
   m_ObjectHideFlags: 0
