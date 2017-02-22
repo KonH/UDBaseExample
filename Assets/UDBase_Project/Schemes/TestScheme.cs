@@ -1,5 +1,4 @@
 #if Scheme_TestScheme
-using UnityEngine;
 using UDBase.Common;
 using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.ConfigSystem;

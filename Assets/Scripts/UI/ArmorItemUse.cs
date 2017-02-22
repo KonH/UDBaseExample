@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.InventorySystem.UI;
 using UDBase.Controllers.EventSystem;

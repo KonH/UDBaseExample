@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UDBase.Controllers.InventorySystem;
+﻿using UDBase.Controllers.InventorySystem;
 
 public struct ItemChanged {
 	public string        HolderName { get; private set; }

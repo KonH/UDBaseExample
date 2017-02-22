@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using UDBase.Controllers.InventorySystem;
+﻿using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.ConfigSystem;
 using FullSerializer;
 

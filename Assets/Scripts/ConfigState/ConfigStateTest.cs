@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UDBase.Controllers.LogSystem;
 
 public class ConfigStateTest : MonoBehaviour {

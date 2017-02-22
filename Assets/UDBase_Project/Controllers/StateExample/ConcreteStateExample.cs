@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using UDBase.Controllers.ConfigSystem;
+﻿using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
 using FullSerializer;
 
@@ -17,7 +15,10 @@ public class ConcreteStateExampleSave {
 public class ConcreteStateExample : IStateExample {
 
 	public void Init() {}
+
 	public void PostInit() {}
+
+	public void Reset() {}
 
 	ConcreteStateExampleConfig _config = null;
 	ConcreteStateExampleSave   _save   = null;

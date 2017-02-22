@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using UDBase.Controllers;
+﻿using UDBase.Controllers;
 
 public interface IStateExample : IController {
 
