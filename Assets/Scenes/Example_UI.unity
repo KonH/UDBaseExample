@@ -2235,12 +2235,16 @@ GameObject:
   m_Component:
   - component: {fileID: 2019899746}
   - component: {fileID: 2019899740}
-  - component: {fileID: 2019899745}
   - component: {fileID: 2019899744}
   - component: {fileID: 2019899743}
   - component: {fileID: 2019899742}
   - component: {fileID: 2019899748}
   - component: {fileID: 2019899741}
+  - component: {fileID: 2019899749}
+  - component: {fileID: 2019899745}
+  - component: {fileID: 2019899747}
+  - component: {fileID: 2019899751}
+  - component: {fileID: 2019899750}
   m_Layer: 5
   m_Name: StepGroup
   m_TagString: Untagged
@@ -2277,8 +2281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
-  Duration: 0.5
+  Direction: 1
+  Duration: 0.75
 --- !u!225 &2019899742
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2329,22 +2333,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2019899739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d3235b289e774cf592f919d9e2b8549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 10
-    m_Bottom: 10
-  m_ChildAlignment: 0
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  Direction: 2
+  Duration: 0.25
 --- !u!224 &2019899746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2363,6 +2358,20 @@ RectTransform:
   m_AnchoredPosition: {x: 375, y: 50}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2019899747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019899739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfb4dd632e334d01888c570f1816d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 2
+  Duration: 0.25
+  Offset: {x: 0, y: 100, z: 0}
 --- !u!114 &2019899748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,10 +2383,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c0564ae62bd49fdb64e097e42ae70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StepByStep: 0
   ShowSteps:
   - {fileID: 2019899741}
+  - {fileID: 2019899749}
+  - {fileID: 2019899751}
   HideSteps:
-  - {fileID: 2019899741}
+  - {fileID: 2019899747}
+  - {fileID: 2019899745}
+  - {fileID: 2019899750}
+--- !u!114 &2019899749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019899739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfb4dd632e334d01888c570f1816d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 1
+  Duration: 0.75
+  Offset: {x: 0, y: 100, z: 0}
+--- !u!114 &2019899750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019899739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd548a583acac4395a525a82fbb34554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 2
+  Duration: 0.5
+--- !u!114 &2019899751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019899739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd548a583acac4395a525a82fbb34554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 1
+  Duration: 1
 --- !u!1 &2033030174
 GameObject:
   m_ObjectHideFlags: 0
