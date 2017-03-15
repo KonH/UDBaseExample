@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Example_Time.unity
   - enabled: 1
     path: Assets/Scenes/Example_UI.unity
+  - enabled: 1
+    path: Assets/Scenes/Example_Audio.unity
