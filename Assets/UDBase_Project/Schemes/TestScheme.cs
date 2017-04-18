@@ -46,8 +46,8 @@ public class ProjectScheme : Scheme {
 			new AssetBundleContentController(AssetBundleMode.WebServer, "https://konh.github.io/Data/UDB/AssetBundles"));
 		AddController<UTime>(
 			new LocalTime(), 
-			new NetworkTime("http://konh.strangled.net:8080/time"), // For non-production test cases
-			new NetworkTime("http://konh.strangled.net:8081/time/timeWebServer:time")); // For non-production test cases
+			new NetworkTime("http://konh.strangled.net/dotnet_time/"), // For non-production test cases
+			new NetworkTime("http://konh.strangled.net/erlang_time/")); // For non-production test cases
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
