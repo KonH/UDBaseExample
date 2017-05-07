@@ -7,17 +7,28 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Loading.unity
+    guid: cdb5f917fa8c045d187c02c2c26b44d1
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
+    guid: 827d030395697454da6d758d954cf458
   - enabled: 1
     path: Assets/Scenes/Example_ConfigSave.unity
+    guid: bdf2b4e2e330c4e438d071339786639d
   - enabled: 1
     path: Assets/Scenes/Example_Inventory.unity
+    guid: 199f6e0b2874c43f6b7afb89bcf58c8d
   - enabled: 1
     path: Assets/Scenes/Example_Content.unity
+    guid: 8d341abc70c3c4b7d8448d0e57fdb462
   - enabled: 1
     path: Assets/Scenes/Example_Time.unity
+    guid: 4c67ebd53537b4ba3816d866b3364df7
   - enabled: 1
     path: Assets/Scenes/Example_UI.unity
+    guid: cfa4eebc5e13b413aa913da0aec1ffb9
   - enabled: 1
     path: Assets/Scenes/Example_Audio.unity
+    guid: b25e090714145426ab9025b20bd7921d
+  - enabled: 1
+    path: Assets/Scenes/Example_Leaderboard.unity
+    guid: 00000000000000000000000000000000
