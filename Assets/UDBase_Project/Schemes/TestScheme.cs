@@ -8,6 +8,7 @@ using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.EventSystem;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.UTime;
+using UDBase.Controllers.UserSystem;
 
 public class ProjectScheme : Scheme {
 
@@ -25,7 +26,8 @@ public class ProjectScheme : Scheme {
 			new FsJsonDataSave(true, true).
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory").
-			AddNode<RewardNode>("reward");
+			AddNode<RewardNode>("reward").
+			AddNode<UserSaveNode>("user");
 
 		var transition = new TradeTransitionHelper(
 			ItemTypes.Money, ItemHelper.GetItemPriceSelector, ItemHelper.GetPackPriceSelector);
@@ -48,6 +50,7 @@ public class ProjectScheme : Scheme {
 			new LocalTime(), 
 			new NetworkTime("https://konhit.xyz/dotnet_time/"), // For non-production test cases
 			new NetworkTime("https://konhit.xyz/erlang_time/")); // For non-production test cases
+		AddController<User>(new SaveUser());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
