@@ -97,16 +97,20 @@ public class LeaderboardControls : MonoBehaviour {
 
 	void StartSend() {
 		Loading = true;
-		EndSend();
+		Leaderboard.PostScore(ParamField.text, UserField.text, int.Parse(ScoreField.text), EndSend);
 	}
 
-	void EndSend() {
+	void EndSend(bool result) {
 		Loading = false;
-		InitRandomScore();
+		if ( result ) {
+			InitRandomScore();
+			StartRefresh();
+		}
 	}
 
 	void StartRefresh() {
 		Loading = true;
+		Leaderboard.Version = VersionField.text;
 		Leaderboard.GetScores(Limit, ParamField.text, EndRefresh);
 	}
 
