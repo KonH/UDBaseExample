@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.UserSystem;
+using UDBase.Controllers.LeaderboardSystem;
 using UDBase.Utils;
 
 public class LeaderboardControls : MonoBehaviour {
@@ -15,6 +17,7 @@ public class LeaderboardControls : MonoBehaviour {
 	public LeaderboardContent Content;
 	public GameObject LoadingItem;
 
+	public int Limit = 100;
 	public List<string> NameTemplates = new List<string>();
 
 	bool Loading {
@@ -29,16 +32,23 @@ public class LeaderboardControls : MonoBehaviour {
 		SendButton.onClick.AddListener(StartSend);
 		RefreshButton.onClick.AddListener(StartRefresh);
 		UserField.onValueChanged.AddListener(OnUserChanged);
+		VersionField.onValueChanged.AddListener(OnVersionChanged);
 		ScoreField.onValueChanged.AddListener(OnScoreChanged);
 	}
 
 	void Start() {
-		InitUserName();
+		InitUser();
+		InitVersion();
 		InitRandomScore();
+		StartRefresh();
 	}
 
 	void OnUserChanged(string newValue) {
 		User.Name = newValue;
+	}
+
+	void OnVersionChanged(string newValue) {
+		Leaderboard.Version = newValue;
 	}
 
 	void OnScoreChanged(string newValue) {
@@ -54,11 +64,15 @@ public class LeaderboardControls : MonoBehaviour {
 		}
 	}
 
-	void InitUserName() {
+	void InitUser() {
 		if ( string.IsNullOrEmpty(User.Name) ) {
+			User.Id = GenerateUserId();
 			User.Name = GenerateUserName();
+			User.AddExternalId("test", GenerateUserId());
 		}
 		UserField.text = User.Name;
+		Log.MessageFormat("User.Id: '{0}'", LogTags.Common, User.Id);
+		Log.MessageFormat("User.ExternalId[\"test\"]: '{0}'", LogTags.Common, User.FindExternalId("test"));
 	}
 
 	string GenerateUserName() {
@@ -67,6 +81,14 @@ public class LeaderboardControls : MonoBehaviour {
 			return string.Format("{0}_{1}", template, Random.Range(0, 255));
 		}
 		return "";
+	}
+
+	string GenerateUserId() {
+		return Random.Range(1, int.MaxValue).ToString();
+	}
+
+	void InitVersion() {
+		VersionField.text = Leaderboard.Version;
 	}
 
 	void InitRandomScore() {
@@ -85,10 +107,20 @@ public class LeaderboardControls : MonoBehaviour {
 
 	void StartRefresh() {
 		Loading = true;
-		EndRefresh();
+		Leaderboard.GetScores(Limit, ParamField.text, EndRefresh);
 	}
 
-	void EndRefresh() {
+	void EndRefresh(List<LeaderboardItem> items) {
 		Loading = false;
+		Content.Clear();
+		if ( items != null ) {
+			for ( int i = 0; i < items.Count; i++ ) {
+				var item = items[i];
+				Content.Add(
+					i + 1,
+					item.UserName,
+					item.Score);
+			}
+		}
 	}
 }

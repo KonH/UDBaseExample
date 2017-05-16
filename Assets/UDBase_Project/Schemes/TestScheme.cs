@@ -9,6 +9,7 @@ using UDBase.Controllers.EventSystem;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.UTime;
 using UDBase.Controllers.UserSystem;
+using UDBase.Controllers.LeaderboardSystem;
 
 public class ProjectScheme : Scheme {
 
@@ -51,6 +52,8 @@ public class ProjectScheme : Scheme {
 			new NetworkTime("https://konhit.xyz/dotnet_time/"), // For non-production test cases
 			new NetworkTime("https://konhit.xyz/erlang_time/")); // For non-production test cases
 		AddController<User>(new SaveUser());
+		AddController<Leaderboard>(
+			new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8")); // For non-production test cases
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
