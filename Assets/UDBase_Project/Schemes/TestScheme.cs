@@ -29,7 +29,8 @@ public class ProjectScheme : Scheme {
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory").
 			AddNode<RewardNode>("reward").
-			AddNode<UserSaveNode>("user");
+			AddNode<UserSaveNode>("user").
+			AddNode<AudioSaveNode>("audio");
 
 		var transition = new TradeTransitionHelper(
 			ItemTypes.Money, ItemHelper.GetItemPriceSelector, ItemHelper.GetPackPriceSelector);
@@ -55,7 +56,7 @@ public class ProjectScheme : Scheme {
 		AddController<User>(new SaveUser());
 		AddController<Leaderboard>(
 			new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8")); // For non-production test cases
-		AddController<Audio>(new AudioController("AudioMixer", channels: new string[] {"SoundVolume", "MusicVolume"}));
+		AddController<Audio>(new SaveAudioController("AudioMixer", channels: new string[] {"SoundVolume", "MusicVolume"}));
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
