@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 446699300}
   - component: {fileID: 446699299}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: SoundPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,9 +771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b002b2f2a8bd114ba3b3eb9aa11cd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChannelName: 
-  DefaultSound: 0
-  DefaultMusic: 1
+  Settings:
+    ChannelName: 
+    DefaultSound: 0
+    DefaultMusic: 1
 --- !u!1 &650706576
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +787,7 @@ GameObject:
   - component: {fileID: 650706579}
   - component: {fileID: 650706578}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: MusicPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,11 +987,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015f9d203f069554bacadb3d16aad127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Settings:
+    ChannelName: 
+    DefaultSound: 1
+    DefaultMusic: 0
   ActiveItem: {fileID: 292488294}
   MutedItem: {fileID: 2123153257}
-  ChannelName: 
-  DefaultSound: 1
-  DefaultMusic: 0
 --- !u!114 &719349033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1922,11 +1924,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015f9d203f069554bacadb3d16aad127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Settings:
+    ChannelName: 
+    DefaultSound: 0
+    DefaultMusic: 1
   ActiveItem: {fileID: 1393768303}
   MutedItem: {fileID: 391074531}
-  ChannelName: 
-  DefaultSound: 0
-  DefaultMusic: 1
 --- !u!114 &1625767259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,9 +2394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b002b2f2a8bd114ba3b3eb9aa11cd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChannelName: 
-  DefaultSound: 1
-  DefaultMusic: 0
+  Settings:
+    ChannelName: 
+    DefaultSound: 1
+    DefaultMusic: 0
 --- !u!1 &1999530392
 GameObject:
   m_ObjectHideFlags: 0
