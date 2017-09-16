@@ -14,6 +14,22 @@ MonoBehaviour:
   Items:
   - {fileID: 114939232185576140}
   - {fileID: 114934854085338550}
+  - {fileID: 114531190913960780}
+--- !u!114 &114531190913960780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e00326f364c4280a4de132f44ade5b, type: 3}
+  m_Name: click
+  m_EditorClassIdentifier: 
+  LoadType: 1
+  Asset: {fileID: 8300000, guid: f17efb43d14a3c64aa2274970ab16e32, type: 3}
+  BundleName: 
+  AssetName: 
 --- !u!114 &114934854085338550
 MonoBehaviour:
   m_ObjectHideFlags: 0
