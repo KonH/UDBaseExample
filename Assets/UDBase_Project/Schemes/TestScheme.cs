@@ -43,7 +43,7 @@ public class ProjectScheme : Scheme {
 		AddController<Log>      (new UnityLog(), new VisualLog());
 		AddController<Config>   (config);
 		AddController<Save>     (save);
-		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
+		AddController<Scene>    (new AsyncSceneLoader("Loading"));
 		AddController<Inventory>(inventory);
 		AddController<Events>   (new EventController());
 		AddController<Content>  (
