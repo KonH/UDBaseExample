@@ -11,6 +11,7 @@ using UDBase.Controllers.UTime;
 using UDBase.Controllers.UserSystem;
 using UDBase.Controllers.LeaderboardSystem;
 using UDBase.Controllers.AudioSystem;
+using UDBase.Controllers.SoundSystem;
 
 public class ProjectScheme : Scheme {
 
@@ -57,6 +58,7 @@ public class ProjectScheme : Scheme {
 		AddController<Leaderboard>(
 			new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8")); // For non-production test cases
 		AddController<Audio>(new SaveAudioController("AudioMixer", channels: new string[] {"SoundVolume", "MusicVolume"}));
+		AddController<Sound>(new SoundController());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
