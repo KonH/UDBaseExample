@@ -15,6 +15,7 @@ MonoBehaviour:
   - {fileID: 114939232185576140}
   - {fileID: 114934854085338550}
   - {fileID: 114531190913960780}
+  - {fileID: 114673061731764064}
 --- !u!114 &114531190913960780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +29,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadType: 1
   Asset: {fileID: 8300000, guid: f17efb43d14a3c64aa2274970ab16e32, type: 3}
+  Type: UnityEngine.AudioClip
+  BundleName: 
+  AssetName: 
+--- !u!114 &114673061731764064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e00326f364c4280a4de132f44ade5b, type: 3}
+  m_Name: music
+  m_EditorClassIdentifier: 
+  LoadType: 1
+  Asset: {fileID: 8300000, guid: ef339066cac18a64e9442fc4504f7db5, type: 3}
+  Type: UnityEngine.AudioClip
   BundleName: 
   AssetName: 
 --- !u!114 &114934854085338550
@@ -43,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadType: 1
   Asset: {fileID: 1666785806526368, guid: 48b507f42e90f4a71ac4f0b31ae3b493, type: 2}
+  Type: UnityEngine.GameObject
   BundleName: 
   AssetName: 
 --- !u!114 &114939232185576140
@@ -58,5 +77,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadType: 2
   Asset: {fileID: 0}
+  Type: UnityEngine.GameObject
   BundleName: testbundle
   AssetName: ContentCube
