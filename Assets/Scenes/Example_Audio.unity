@@ -1413,6 +1413,9 @@ MonoBehaviour:
   AutoPlay: 0
   Loop: 0
   Delay: 0
+  FadeIn: 0
+  FadeOut: 0
+  DestroyOnStop: 0
 --- !u!82 &1047844632
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2808,9 +2811,12 @@ MonoBehaviour:
     ChannelName: 
     DefaultSound: 0
     DefaultMusic: 1
-  AutoPlay: 0
+  AutoPlay: 1
   Loop: 1
   Delay: 0
+  FadeIn: 3
+  FadeOut: 3
+  DestroyOnStop: 0
 --- !u!82 &1720928341
 AudioSource:
   m_ObjectHideFlags: 0
