@@ -10,6 +10,9 @@ using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.UTime;
 using UDBase.Controllers.UserSystem;
 using UDBase.Controllers.LeaderboardSystem;
+using UDBase.Controllers.AudioSystem;
+using UDBase.Controllers.SoundSystem;
+using UDBase.Controllers.MusicSystem;
 
 public class ProjectScheme : Scheme {
 
@@ -28,7 +31,8 @@ public class ProjectScheme : Scheme {
 			AddNode<ConcreteStateExampleSave>("save_node").
 			AddNode<InventorySaveNode>("inventory").
 			AddNode<RewardNode>("reward").
-			AddNode<UserSaveNode>("user");
+			AddNode<UserSaveNode>("user").
+			AddNode<AudioSaveNode>("audio");
 
 		var transition = new TradeTransitionHelper(
 			ItemTypes.Money, ItemHelper.GetItemPriceSelector, ItemHelper.GetPackPriceSelector);
@@ -41,7 +45,7 @@ public class ProjectScheme : Scheme {
 		AddController<Log>      (new UnityLog(), new VisualLog());
 		AddController<Config>   (config);
 		AddController<Save>     (save);
-		AddController<Scene>    (new AsyncSceneLoader("Loading", "MainScene"));
+		AddController<Scene>    (new AsyncSceneLoader("Loading"));
 		AddController<Inventory>(inventory);
 		AddController<Events>   (new EventController());
 		AddController<Content>  (
@@ -54,6 +58,9 @@ public class ProjectScheme : Scheme {
 		AddController<User>(new SaveUser());
 		AddController<Leaderboard>(
 			new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8")); // For non-production test cases
+		AddController<Audio>(new SaveAudioController("AudioMixer", channels: new string[] {"SoundVolume", "MusicVolume"}));
+		AddController<Sound>(new SoundController());
+		AddController<Music>(new MusicController());
 
 		// Examples
 		AddController<StateExample>(new ConcreteStateExample());
