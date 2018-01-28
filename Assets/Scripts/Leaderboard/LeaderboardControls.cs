@@ -5,6 +5,7 @@ using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.UserSystem;
 using UDBase.Controllers.LeaderboardSystem;
 using UDBase.Utils;
+using Zenject;
 
 public class LeaderboardControls : MonoBehaviour {
 
@@ -28,6 +29,15 @@ public class LeaderboardControls : MonoBehaviour {
 		}
 	}
 
+	IUser _user;
+	ILeaderboard _leaderboard;
+
+	[Inject]
+	void Init(IUser user, ILeaderboard leaderboard) {
+		_user = user;
+		_leaderboard = leaderboard;
+	}
+
 	void Awake() {
 		SendButton.onClick.AddListener(StartSend);
 		RefreshButton.onClick.AddListener(StartRefresh);
@@ -44,11 +54,11 @@ public class LeaderboardControls : MonoBehaviour {
 	}
 
 	void OnUserChanged(string newValue) {
-		User.Name = newValue;
+		_user.Name = newValue;
 	}
 
 	void OnVersionChanged(string newValue) {
-		Leaderboard.Version = newValue;
+		_leaderboard.Version = newValue;
 	}
 
 	void OnScoreChanged(string newValue) {
@@ -65,14 +75,14 @@ public class LeaderboardControls : MonoBehaviour {
 	}
 
 	void InitUser() {
-		if ( string.IsNullOrEmpty(User.Name) ) {
-			User.Id = GenerateUserId();
-			User.Name = GenerateUserName();
-			User.AddExternalId("test", GenerateUserId());
+		if ( string.IsNullOrEmpty(_user.Name) ) {
+			_user.Id = GenerateUserId();
+			_user.Name = GenerateUserName();
+			_user.AddExternalId("test", GenerateUserId());
 		}
-		UserField.text = User.Name;
-		Log.MessageFormat("User.Id: '{0}'", LogTags.Common, User.Id);
-		Log.MessageFormat("User.ExternalId[\"test\"]: '{0}'", LogTags.Common, User.FindExternalId("test"));
+		UserField.text = _user.Name;
+		Log.MessageFormat("User.Id: '{0}'", LogTags.Common, _user.Id);
+		Log.MessageFormat("User.ExternalId[\"test\"]: '{0}'", LogTags.Common, _user.FindExternalId("test"));
 	}
 
 	string GenerateUserName() {
@@ -88,7 +98,7 @@ public class LeaderboardControls : MonoBehaviour {
 	}
 
 	void InitVersion() {
-		VersionField.text = Leaderboard.Version;
+		VersionField.text = _leaderboard.Version;
 	}
 
 	void InitRandomScore() {
@@ -96,8 +106,11 @@ public class LeaderboardControls : MonoBehaviour {
 	}
 
 	void StartSend() {
-		Loading = true;
-		Leaderboard.PostScore(ParamField.text, UserField.text, int.Parse(ScoreField.text), EndSend);
+		int score = 0;
+		if ( int.TryParse(ScoreField.text, out score) ) {
+			Loading = true;
+			_leaderboard.PostScore(ParamField.text, UserField.text, score, EndSend);
+		}
 	}
 
 	void EndSend(bool result) {
@@ -110,8 +123,8 @@ public class LeaderboardControls : MonoBehaviour {
 
 	void StartRefresh() {
 		Loading = true;
-		Leaderboard.Version = VersionField.text;
-		Leaderboard.GetScores(Limit, ParamField.text, EndRefresh);
+		_leaderboard.Version = VersionField.text;
+		_leaderboard.GetScores(Limit, ParamField.text, EndRefresh);
 	}
 
 	void EndRefresh(List<LeaderboardItem> items) {

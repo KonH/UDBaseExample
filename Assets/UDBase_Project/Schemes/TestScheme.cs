@@ -55,9 +55,6 @@ public class ProjectScheme : Scheme {
 			new LocalTime(), 
 			new NetworkTime("https://konhit.xyz/dotnet_time/"), // For non-production test cases
 			new NetworkTime("https://konhit.xyz/erlang_time/")); // For non-production test cases
-		AddController<User>(new SaveUser());
-		AddController<Leaderboard>(
-			new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8")); // For non-production test cases
 	}
 }
 #endif
