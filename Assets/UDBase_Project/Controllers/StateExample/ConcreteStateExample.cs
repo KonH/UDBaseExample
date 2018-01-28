@@ -13,33 +13,24 @@ public class ConcreteStateExampleSave {
 }
 
 public class ConcreteStateExample : IStateExample {
-
-	public void Init() {}
-
-	public void PostInit() {}
-
-	public void Reset() {}
-
 	ConcreteStateExampleConfig _config = null;
 	ConcreteStateExampleSave   _save   = null;
 
-	public string GetConfigData()
-	{
+	public string GetConfigData() {
 		_config = Config.GetNode<ConcreteStateExampleConfig>();
-		if( _config != null ) {
+		if ( _config != null ) {
 			return _config.Value;
 		}
 		return "";
 	}
 
-	public int GetSavedData()
-	{
+	public int GetSavedData() {
 		_save = Save.GetNode<ConcreteStateExampleSave>();
 		return _save.IntValue;
 	}
 
 	public void SetSavedData(int value) {
-		if( _save == null ) {
+		if ( _save == null ) {
 			_save = new ConcreteStateExampleSave();
 		}
 		_save.IntValue = value;

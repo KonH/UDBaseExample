@@ -61,9 +61,6 @@ public class ProjectScheme : Scheme {
 		AddController<Audio>(new SaveAudioController("AudioMixer", channels: new string[] {"SoundVolume", "MusicVolume"}));
 		AddController<Sound>(new SoundController());
 		AddController<Music>(new MusicController());
-
-		// Examples
-		AddController<StateExample>(new ConcreteStateExample());
 	}
 }
 #endif

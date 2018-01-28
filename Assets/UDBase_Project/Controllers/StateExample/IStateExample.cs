@@ -1,7 +1,4 @@
-﻿using UDBase.Controllers;
-
-public interface IStateExample : IController {
-
+﻿public interface IStateExample {
 	string GetConfigData();
 	int    GetSavedData();
 	void   SetSavedData(int value);
