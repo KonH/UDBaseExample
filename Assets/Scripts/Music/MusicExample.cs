@@ -1,13 +1,20 @@
 ﻿using UnityEngine;
 using UDBase.Controllers.MusicSystem;
+using Zenject;
 
 public class MusicExample : MonoBehaviour {
+	IMusic _music;
+
+	[Inject]
+	public void Init(IMusic music) {
+		_music = music;
+	}
 
 	public void Pause() {
-		Music.Pause();
+		_music.Pause();
 	}
 
 	public void UnPause() {
-		Music.UnPause();
+		_music.UnPause();
 	}
 }
