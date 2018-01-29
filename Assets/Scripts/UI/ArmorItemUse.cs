@@ -2,6 +2,7 @@
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.InventorySystem.UI;
 using UDBase.Controllers.EventSystem;
+using Zenject;
 
 public class ArmorItemUse : ItemControl {
 	public Button UseButton = null;
@@ -9,8 +10,15 @@ public class ArmorItemUse : ItemControl {
 	string        _holderName = null;
 	InventoryItem _item       = null;
 
+	IEvent _events;
+
 	void Awake() {
 		UseButton.onClick.AddListener(() => UseItem());
+	}
+
+	[Inject]
+	public void PreInit(IEvent events) {
+		_events = events;
 	}
 
 	public override void Init(HolderItemsView owner, InventoryItem item) {
@@ -24,7 +32,7 @@ public class ArmorItemUse : ItemControl {
 		var armorItem = _item as ArmorItem;
 		if( armorItem != null ) {
 			armorItem.Durability-= 10;
-			Events.Fire<ItemChanged>(new ItemChanged(_holderName, _item));
+			_events.Fire(new ItemChanged(_holderName, _item));
 			Inventory.SaveChanges();
 		}
 		if( armorItem.Durability <= 0 ) {

@@ -2,14 +2,22 @@
 using UDBase.Controllers.InventorySystem.UI;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.EventSystem;
+using Zenject;
 
 public class CustomItemView : ItemView {
 
 	HolderItemsView _owner = null;
 	InventoryItem   _item  = null;
 
+	IEvent _events;
+
+	[Inject]
+	public void Init(IEvent events) {
+		_events = events;
+	}
+
 	void OnEnable() {
-		Events.Subscribe<ItemChanged>(this, OnItemChanged);
+		_events.Subscribe<ItemChanged>(this, OnItemChanged);
 	}
 
 	void OnItemChanged(ItemChanged e) {
