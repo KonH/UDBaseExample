@@ -10,10 +10,17 @@ using Zenject;
 public class TestInstaller : MonoInstaller {
 	public override void InstallBindings() {
 		// TODO: Helper methods
+		// TODO: Fix start issue
+		// TODO: Fix issue in Audio example
+		// TODO: Fix issues in Inventory example
+		// TODO: Full move audio/sound/music
+		
 		Container.Bind<IEvent>().To<EventController>().AsSingle();
 
-		Container.Bind<IScene>().To<IScene>().FromMethod(_ => CreateAsyncSceneLoader()).AsSingle();
-		
+		Container.Bind<AsyncLoadHelper>().To<AsyncLoadHelper>().FromNewComponentOnNewGameObject(GameObjectCreationParameters.Default).AsSingle();
+		Container.Bind<AsyncSceneLoader.SceneSetup>().FromInstance(new AsyncSceneLoader.SceneSetup("Loading", "MainScene")).AsSingle();
+		Container.Bind<IScene>().To<AsyncSceneLoader>().AsSingle();
+
 		Container.Bind<IAudio>().To<IAudio>().FromMethod(_ => CreateAudioController()).AsSingle();
 		Container.Bind<ISound>().To<SoundController>().AsSingle().NonLazy();
 		Container.Bind<IMusic>().To<MusicController>().AsSingle().NonLazy();
@@ -31,9 +38,5 @@ public class TestInstaller : MonoInstaller {
 
 	WebLeaderboard CreateWebLeaderboard() {
 		return new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8");
-	}
-
-	AsyncSceneLoader CreateAsyncSceneLoader() {
-		return new AsyncSceneLoader("Loading", "MainScene"); // TODO: Move to Zenject
 	}
 }
