@@ -5,16 +5,27 @@ using UDBase.Controllers.MusicSystem;
 using UDBase.Controllers.SceneSystem;
 using UDBase.Controllers.SoundSystem;
 using UDBase.Controllers.UserSystem;
+using UDBase.Controllers.UTime;
 using Zenject;
 
 public class TestInstaller : MonoInstaller {
 	public override void InstallBindings() {
 		// TODO: Helper methods
-		// TODO: Fix start issue
+		
+		// TODO: Log
+		// => TODO: Fix start issue
 		// TODO: Fix issue in Audio example
-		// TODO: Fix issues in Inventory example
+		
+		// TODO: Config/Save
+		// => TODO: Fix issues in Inventory example
+		// => TODO: Inventory
+
+		// TODO: Content
+
 		// TODO: Full move audio/sound/music
 		
+		Container.Bind<ITime>().To<LocalTime>().AsSingle();
+
 		Container.Bind<IEvent>().To<EventController>().AsSingle();
 
 		Container.Bind<AsyncLoadHelper>().To<AsyncLoadHelper>().FromNewComponentOnNewGameObject(GameObjectCreationParameters.Default).AsSingle();

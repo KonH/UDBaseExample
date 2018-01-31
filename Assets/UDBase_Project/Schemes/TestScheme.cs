@@ -49,10 +49,6 @@ public class ProjectScheme : Scheme {
 		AddController<Content>  (
 			new DirectContentController(), 
 			new AssetBundleContentController(AssetBundleMode.WebServer, "https://konh.github.io/Data/UDB/AssetBundles"));
-		AddController<UTime>(
-			new LocalTime(), 
-			new NetworkTime("https://konhit.xyz/dotnet_time/"), // For non-production test cases
-			new NetworkTime("https://konhit.xyz/erlang_time/")); // For non-production test cases
 	}
 }
 #endif

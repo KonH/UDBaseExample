@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UDBase.Controllers.UTime;
 using UDBase.Controllers.SaveSystem;
+using Zenject;
 
 public class TimerExample : MonoBehaviour {
 
@@ -11,10 +12,15 @@ public class TimerExample : MonoBehaviour {
 	public Button RewardButton = null;
 	public int    RewardTime   = 30;
 
-	DateTime _curLocalTime   = DateTime.MinValue;
-	DateTime _curRemoteTime  = DateTime.MinValue;
+	DateTime _curTime        = DateTime.MinValue;
 	int      _lastTimeSecond = -1;
-	bool     _canGetReward   = false;
+
+	ITime _time;
+
+	[Inject]
+	public void Init(ITime time) {
+		_time = time;
+	}
 
 	void Start () {
 		RewardButton.onClick.AddListener(OnRewardButtonClick);
@@ -23,7 +29,7 @@ public class TimerExample : MonoBehaviour {
 
 	void OnRewardButtonClick() {
 		var rewardNode = Save.GetNode<RewardNode>();
-		rewardNode.LastRewardTime = _curRemoteTime;
+		rewardNode.LastRewardTime = _curTime;
 		Save.SaveNode(rewardNode);
 		UpdateButtonState(false);
 	}
@@ -33,39 +39,26 @@ public class TimerExample : MonoBehaviour {
 	}
 
 	void UpdateTimes() {
-		var isTrusted = UTime.IsTrusted();
-		var isStable = UTime.IsStable();
-		_curLocalTime  = UTime.GetUntrustedTime();
-		_curRemoteTime = UTime.GetTrustedTime();
-		if( _lastTimeSecond != _curLocalTime.Second ) {
-			_lastTimeSecond = _curLocalTime.Second;
-			TimeText.text = string.Format(
-				"local: {0}\n remote: {1}\n (trusted: {2}, stable: {3})",
-				_curLocalTime.ToString("G"),
-				_curRemoteTime.ToString("G"),
-				isTrusted, 
-				isStable);
+		var isStable = _time.IsAvailable || _time.IsFailed;
+		_curTime  = _time.CurrentTime;
+		if( _lastTimeSecond != _curTime.Second ) {
+			_lastTimeSecond = _curTime.Second;
+			TimeText.text = $"Time: {_curTime.ToString("G")}\n Stable: {isStable}";
 		}
-		if( isTrusted ) {
-			var rewardNode = Save.GetNode<RewardNode>();
-			var lastTime = rewardNode.LastRewardTime;
-			var interval = (_curRemoteTime - lastTime).TotalSeconds;
-			if( interval > RewardTime ) {
-				TimerText.text = "Ready";
-				UpdateButtonState(true);
-			} else {
-				TimerText.text = string.Format("Wait: {0:0.0}", Math.Round(interval, 1));
-				UpdateButtonState(false);
-			}
+		var rewardNode = Save.GetNode<RewardNode>();
+		var lastTime = rewardNode.LastRewardTime;
+		var interval = (_curTime - lastTime).TotalSeconds;
+		if( interval > RewardTime ) {
+			TimerText.text = "Ready";
+			UpdateButtonState(true);
 		} else {
-			TimerText.text = "Not Ready";
+			TimerText.text = string.Format("Wait: {0:0.0}", Math.Round(interval, 1));
 			UpdateButtonState(false);
 		}
 	}
 
 	void Update () {
-		_canGetReward = UTime.IsStable();
-		UpdateButtonState(_canGetReward);
+		UpdateButtonState(_time.IsAvailable || _time.IsFailed);
 		UpdateTimes();
 	}
 }
