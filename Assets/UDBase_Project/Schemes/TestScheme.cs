@@ -16,10 +16,7 @@ using UDBase.Controllers.MusicSystem;
 public class ProjectScheme : Scheme {
 
 	public ProjectScheme() {
-		AddController<Log>      (new UnityLog(), new VisualLog());
-		AddController<Content>  (
-			new DirectContentController(), 
-			new AssetBundleContentController(AssetBundleMode.WebServer, "https://konh.github.io/Data/UDB/AssetBundles"));
+		//AddController<Log>      (new UnityLog(), new VisualLog());
 	}
 }
 #endif
