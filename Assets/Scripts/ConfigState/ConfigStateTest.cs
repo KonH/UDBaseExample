@@ -4,10 +4,10 @@ using Zenject;
 
 public class ConfigStateTest : MonoBehaviour {
 
-	IStateExample _stateExample;
+	ConcreteStateExample _stateExample;
 
 	[Inject]
-	void Init(IStateExample stateExample) {
+	void Init(ConcreteStateExample stateExample) {
 		_stateExample = stateExample;
 	}
 

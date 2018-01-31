@@ -26,14 +26,6 @@ public class ProjectScheme : Scheme {
 			AddList<ArmorItemInfo>(ItemTypes.Armor).
 			AddList<PackInfo>(ItemTypes.Packs);
 
-		var save = 
-			new FsJsonDataSave(true, true).
-			AddNode<ConcreteStateExampleSave>("save_node").
-			AddNode<InventorySaveNode>("inventory").
-			AddNode<RewardNode>("reward").
-			AddNode<UserSaveNode>("user").
-			AddNode<AudioSaveNode>("audio");
-
 		var transition = new TradeTransitionHelper(
 			ItemTypes.Money, ItemHelper.GetItemPriceSelector, ItemHelper.GetPackPriceSelector);
 
@@ -44,7 +36,6 @@ public class ProjectScheme : Scheme {
 		// Default controllers
 		AddController<Log>      (new UnityLog(), new VisualLog());
 		AddController<Config>   (config);
-		AddController<Save>     (save);
 		AddController<Inventory>(inventory);
 		AddController<Content>  (
 			new DirectContentController(), 

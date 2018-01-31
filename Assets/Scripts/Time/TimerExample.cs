@@ -16,10 +16,12 @@ public class TimerExample : MonoBehaviour {
 	int      _lastTimeSecond = -1;
 
 	ITime _time;
+	ISave _save;
 
 	[Inject]
-	public void Init(ITime time) {
+	public void Init(ITime time, ISave save) {
 		_time = time;
+		_save = save;
 	}
 
 	void Start () {
@@ -28,9 +30,9 @@ public class TimerExample : MonoBehaviour {
 	}
 
 	void OnRewardButtonClick() {
-		var rewardNode = Save.GetNode<RewardNode>();
+		var rewardNode = _save.GetNode<RewardNode>();
 		rewardNode.LastRewardTime = _curTime;
-		Save.SaveNode(rewardNode);
+		_save.SaveNode(rewardNode);
 		UpdateButtonState(false);
 	}
 	
@@ -45,7 +47,7 @@ public class TimerExample : MonoBehaviour {
 			_lastTimeSecond = _curTime.Second;
 			TimeText.text = $"Time: {_curTime.ToString("G")}\n Stable: {isStable}";
 		}
-		var rewardNode = Save.GetNode<RewardNode>();
+		var rewardNode = _save.GetNode<RewardNode>();
 		var lastTime = rewardNode.LastRewardTime;
 		var interval = (_curTime - lastTime).TotalSeconds;
 		if( interval > RewardTime ) {
