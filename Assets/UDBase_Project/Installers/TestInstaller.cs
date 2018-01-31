@@ -1,7 +1,6 @@
 ﻿using UDBase.Controllers.AudioSystem;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.EventSystem;
-using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.LeaderboardSystem;
 using UDBase.Controllers.MusicSystem;
 using UDBase.Controllers.SaveSystem;
@@ -13,15 +12,15 @@ using Zenject;
 
 public class TestInstaller : MonoInstaller {
 	public override void InstallBindings() {
+		// TODO: Build Types
+
 		// TODO: Helper methods
 
 		// TODO: Use settings pattern?
+		// TODO: Visual setup?
 		
-		// TODO: Log (drop logger and use visual helper only?)
+		// TODO: Log (drop logger and use visual helper only, what with enable/disable by build type?)
 		// => TODO: Fix start issue
-		
-		// TODO: Fix issues in Inventory example
-		// TODO: Inventory (drop and rewrite later?)
 
 		// TODO: Content (drop multi-load or make solver?)
 
@@ -63,7 +62,6 @@ public class TestInstaller : MonoInstaller {
 	ISave CreateSave() {
 		return new FsJsonDataSave(true, true).
 			AddNode<ConcreteStateExampleSave>("save_node").
-			AddNode<InventorySaveNode>("inventory").
 			AddNode<RewardNode>("reward").
 			AddNode<UserSaveNode>("user").
 			AddNode<AudioSaveNode>("audio");
@@ -71,11 +69,6 @@ public class TestInstaller : MonoInstaller {
 
 	IConfig CreateConfig() { 
 		return new FsJsonResourcesConfig().
-			AddNode<ConcreteStateExampleConfig>("example_node").
-			AddNode<ItemSourceConfigNode>("inventory_source").
-			AddList<CommonItemInfo>(ItemTypes.Common).
-			AddList<WeaponItemInfo>(ItemTypes.Weapon).
-			AddList<ArmorItemInfo>(ItemTypes.Armor).
-			AddList<PackInfo>(ItemTypes.Packs);
+			AddNode<ConcreteStateExampleConfig>("example_node");
 	}
 }
