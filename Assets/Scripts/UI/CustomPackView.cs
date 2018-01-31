@@ -1,8 +1,15 @@
 ﻿using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.InventorySystem.UI;
 using UDBase.Controllers.ConfigSystem;
+using Zenject;
 
 public class CustomPackView : PackView {
+	IConfig _config;
+
+	[Inject]
+	public void PreInit(IConfig config) {
+		_config = config;
+	}
 
 	public override void Init(HolderPacksView owner, InventoryPack pack) {
 		if( NameText ) {
@@ -14,7 +21,7 @@ public class CustomPackView : PackView {
 	}
 
 	string GetPackInfo(InventoryPack pack) {
-		PackInfo packInfo = Config.GetItem<PackInfo>(pack.Name);
+		PackInfo packInfo = _config.GetItem<PackInfo>(pack.Name);
 		return "price: " + packInfo.Price;
 	}
 }

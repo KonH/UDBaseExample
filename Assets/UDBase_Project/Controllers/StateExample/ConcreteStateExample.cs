@@ -16,14 +16,16 @@ public class ConcreteStateExample {
 	ConcreteStateExampleConfig _configExample = null;
 	ConcreteStateExampleSave _saveExample = null;
 
+	IConfig _config;
 	ISave _save;
 
-	public ConcreteStateExample(ISave save) {
+	public ConcreteStateExample(IConfig config, ISave save) {
+		_config = config;
 		_save = save;
 	}
 
 	public string GetConfigData() {
-		_configExample = Config.GetNode<ConcreteStateExampleConfig>();
+		_configExample = _config.GetNode<ConcreteStateExampleConfig>();
 		if ( _configExample != null ) {
 			return _configExample.Value;
 		}

@@ -10,9 +10,10 @@ public class CustomItemView : ItemView {
 	InventoryItem   _item  = null;
 
 	IEvent _events;
+	IConfig _config;
 
 	[Inject]
-	public void Init(IEvent events) {
+	public void Init(IEvent events, IConfig config) {
 		_events = events;
 	}
 
@@ -42,7 +43,7 @@ public class CustomItemView : ItemView {
 		switch( item.Type ) {
 			case ItemTypes.Common:
 			{
-				var itemInfo = Config.GetItem<CommonItemInfo>(item.Name);	
+				var itemInfo = _config.GetItem<CommonItemInfo>(item.Name);	
 				if( itemInfo != null ) {
 					return "price: " + itemInfo.Price;
 				}
@@ -51,7 +52,7 @@ public class CustomItemView : ItemView {
 			
 			case ItemTypes.Weapon:
 				{
-					var itemInfo = Config.GetItem<WeaponItemInfo>(item.Name);	
+					var itemInfo = _config.GetItem<WeaponItemInfo>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, damage: {1})", itemInfo.Price, itemInfo.Damage);
 					}
@@ -61,7 +62,7 @@ public class CustomItemView : ItemView {
 			case ItemTypes.Armor:
 				{
 					var armorState = item as ArmorItem;
-					var itemInfo = Config.GetItem<ArmorItemInfo>(item.Name);	
+					var itemInfo = _config.GetItem<ArmorItemInfo>(item.Name);	
 					if( itemInfo != null ) {
 						return string.Format("price: {0}, durability: {1}/{2})", 
 							itemInfo.Price, armorState.Durability, itemInfo.MaxDurability);

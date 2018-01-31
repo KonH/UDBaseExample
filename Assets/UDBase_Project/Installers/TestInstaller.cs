@@ -1,4 +1,5 @@
 ﻿using UDBase.Controllers.AudioSystem;
+using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.EventSystem;
 using UDBase.Controllers.InventorySystem;
 using UDBase.Controllers.LeaderboardSystem;
@@ -16,19 +17,20 @@ public class TestInstaller : MonoInstaller {
 
 		// TODO: Use settings pattern?
 		
-		// TODO: Log
+		// TODO: Log (drop logger and use visual helper only?)
 		// => TODO: Fix start issue
-		// TODO: Fix issue in Audio example
 		
-		// TODO: Config
-		// => TODO: Fix issues in Inventory example
-		// => TODO: Inventory
+		// TODO: Fix issues in Inventory example
+		// TODO: Inventory (drop and rewrite later?)
 
-		// TODO: Content
+		// TODO: Content (drop multi-load or make solver?)
 
 		// TODO: Full move audio/sound/music
+		// TODO: Fix issue in Audio example
 		
 		Container.Bind<ISave>().To<ISave>().FromMethod(_ => CreateSave()).AsSingle();
+
+		Container.Bind<IConfig>().To<IConfig>().FromMethod(_ => CreateConfig()).AsSingle();
 
 		Container.Bind<ITime>().To<LocalTime>().AsSingle();
 
@@ -65,5 +67,15 @@ public class TestInstaller : MonoInstaller {
 			AddNode<RewardNode>("reward").
 			AddNode<UserSaveNode>("user").
 			AddNode<AudioSaveNode>("audio");
+	}
+
+	IConfig CreateConfig() { 
+		return new FsJsonResourcesConfig().
+			AddNode<ConcreteStateExampleConfig>("example_node").
+			AddNode<ItemSourceConfigNode>("inventory_source").
+			AddList<CommonItemInfo>(ItemTypes.Common).
+			AddList<WeaponItemInfo>(ItemTypes.Weapon).
+			AddList<ArmorItemInfo>(ItemTypes.Armor).
+			AddList<PackInfo>(ItemTypes.Packs);
 	}
 }
