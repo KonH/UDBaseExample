@@ -2,12 +2,12 @@
 using UDBase.Controllers.SaveSystem;
 using FullSerializer;
 
-public class ConcreteStateExampleConfig {
+public class ConcreteStateExampleConfig:IConfigSource {
 	[fsProperty("value")]
 	public string Value = "";
 }
 
-public class ConcreteStateExampleSave {
+public class ConcreteStateExampleSave:ISaveSource {
 	[fsProperty("int_value")]
 	public int IntValue = 0;
 }

@@ -88,3 +88,26 @@ MonoBehaviour:
   AssetBundleSettings:
     Mode: 0
     Path: 
+  JsonConfigSettings:
+    Items:
+    - Type:
+        classRef: ConcreteStateExampleConfig, Assembly-CSharp
+      Name: example_node
+    FileName: config
+  JsonSaveSettings:
+    Items:
+    - Type:
+        classRef: UDBase.Controllers.AudioSystem.AudioSaveNode, Assembly-CSharp
+      Name: audio
+    - Type:
+        classRef: UDBase.Controllers.UserSystem.UserSaveNode, Assembly-CSharp
+      Name: user
+    - Type:
+        classRef: RewardNode, Assembly-CSharp
+      Name: reward
+    - Type:
+        classRef: ConcreteStateExampleSave, Assembly-CSharp
+      Name: save_node
+    FileName: save
+    PrettyJson: 1
+    Versioning: 1

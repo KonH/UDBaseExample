@@ -19,6 +19,8 @@ public class TestInstaller : MonoInstaller {
 	public SoundUtility.Settings SoundUtilitySettings;
 	public WebLeaderboard.Settings WebLeaderboardSettings;
 	public AssetBundleContentController.Settings AssetBundleSettings;
+	public Config.JsonSettings JsonConfigSettings;
+	public Save.JsonSettings JsonSaveSettings;
 
 	public override void InstallBindings() {
 		// TODO: Build Types
@@ -35,9 +37,13 @@ public class TestInstaller : MonoInstaller {
 		// TODO: Fix issue in Audio example
 		// TODO: Fix issue in Audio Controller
 		
-		Container.Bind<ISave>().FromMethod(_ => CreateSave()).AsSingle();
+		// TODO: Check config/save works
+		
+		Container.BindInstance(JsonConfigSettings);
+		Container.Bind<IConfig>().To<FsJsonResourcesConfig>().AsSingle();
 
-		Container.Bind<IConfig>().FromMethod(_ => CreateConfig()).AsSingle();
+		Container.BindInstance(JsonSaveSettings);
+		Container.Bind<ISave>().To<FsJsonDataSave>().AsSingle();
 
 		Container.Bind<ITime>().To<LocalTime>().AsSingle();
 
@@ -69,19 +75,5 @@ public class TestInstaller : MonoInstaller {
 		Container.Bind<IContent>().To<AssetBundleContentController>().AsSingle();
 		
 		Container.Bind<ConcreteStateExample>().AsSingle();
-	}
-
-	// TODO: Use custom property drawer for this stuff?
-	ISave CreateSave() {
-		return new FsJsonDataSave(true, true).
-			AddNode<ConcreteStateExampleSave>("save_node").
-			AddNode<RewardNode>("reward").
-			AddNode<UserSaveNode>("user").
-			AddNode<AudioSaveNode>("audio");
-	}
-
-	IConfig CreateConfig() { 
-		return new FsJsonResourcesConfig().
-			AddNode<ConcreteStateExampleConfig>("example_node");
 	}
 }
