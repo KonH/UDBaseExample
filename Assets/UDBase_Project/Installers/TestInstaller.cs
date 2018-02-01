@@ -1,4 +1,5 @@
-﻿using UDBase.Controllers.AudioSystem;
+﻿using System.Collections.Generic;
+using UDBase.Controllers.AudioSystem;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.EventSystem;
@@ -12,22 +13,25 @@ using UDBase.Controllers.UTime;
 using Zenject;
 
 public class TestInstaller : MonoInstaller {
+	public AsyncSceneLoader.Settings SceneSettings;
+	public AudioController.Settings AudioSettings;
+	public SaveAudioController.Settings SaveAudioSettings;
+	public SoundUtility.Settings SoundUtilitySettings;
+	public WebLeaderboard.Settings WebLeaderboardSettings;
+	public AssetBundleContentController.Settings AssetBundleSettings;
+
 	public override void InstallBindings() {
 		// TODO: Build Types
 
 		// TODO: Do I need all these mono helpers?
 
-		// TODO: Helper methods
+		// TODO: Helper methods?
 
 		// TODO: Installer per controller?
-
-		// TODO: Use settings pattern?
-		// TODO: Visual setup?
 		
 		// TODO: Log (drop logger and use visual helper only, what with enable/disable by build type?)
 		// => TODO: Fix start issue
 		
-		// TODO: Full move audio/sound/music
 		// TODO: Fix issue in Audio example
 		// TODO: Fix issue in Audio Controller
 		
@@ -40,36 +44,34 @@ public class TestInstaller : MonoInstaller {
 		Container.Bind<IEvent>().To<EventController>().AsSingle();
 
 		Container.Bind<AsyncLoadHelper>().FromNewComponentOnNewGameObject().AsSingle();
-		Container.BindInstance(new AsyncSceneLoader.SceneSetup("Loading", "MainScene")).AsSingle();
+		Container.BindInstance(SceneSettings);
 		Container.Bind<IScene>().To<AsyncSceneLoader>().AsSingle();
 
-		Container.Bind<IAudio>().FromMethod(_ => CreateAudioController()).AsSingle();
-		Container.BindInstance(new SoundUtility.Settings()).AsSingle();
+		Container.BindInstance(AudioSettings);
+		Container.BindInstance(SaveAudioSettings);
+		Container.Bind<IAudio>().To<SaveAudioController>().AsSingle();
+		
+		Container.BindInstance(SoundUtilitySettings);
 		Container.Bind<SoundUtility>().FromNewComponentOnNewGameObject().AsSingle();
 		Container.Bind<ISound>().To<SoundController>().AsSingle().NonLazy();
+		
 		Container.Bind<IMusic>().To<MusicController>().AsSingle().NonLazy();
 
 		Container.Bind<IUser>().To<SaveUser>().AsSingle();
 
-		Container.Bind<ILeaderboard>().FromMethod(_ => CreateWebLeaderboard()).AsSingle();
+		Container.BindInstance(WebLeaderboardSettings);
+		Container.Bind<ILeaderboard>().To<WebLeaderboard>().AsSingle();
 
 		Container.Bind<IContent>().To<DirectContentController>().AsSingle();
+		
 		Container.Bind<AssetBundleHelper>().FromNewComponentOnNewGameObject().AsSingle();
-		Container.BindInstance(new AssetBundleContentController.Settings()).AsSingle();
+		Container.BindInstance(AssetBundleSettings);
 		Container.Bind<IContent>().To<AssetBundleContentController>().AsSingle();
 		
 		Container.Bind<ConcreteStateExample>().AsSingle();
 	}
 
-	IAudio CreateAudioController() {
-		var save = Container.Resolve<ISave>();
-		return new SaveAudioController(save, "AudioMixer", channels: new string[] { "SoundVolume", "MusicVolume" });
-	}
-
-	WebLeaderboard CreateWebLeaderboard() {
-		return new WebLeaderboard("https://konhit.xyz/lbservice/", "testGame", "1.0.0", "testUser", "mGPRudr8");
-	}
-
+	// TODO: Use custom property drawer for this stuff?
 	ISave CreateSave() {
 		return new FsJsonDataSave(true, true).
 			AddNode<ConcreteStateExampleSave>("save_node").

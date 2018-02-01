@@ -67,3 +67,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5044ec7263f0e1418141de9c1fe1a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneSettings:
+    LoadingScene: Loading
+  AudioSettings:
+    MixerPath: AudioMixer
+    Channels:
+    - SoundVolume
+    - MusicVolume
+    InitialVolume: 0.5
+  SaveAudioSettings:
+    SaveDelta: 0.1
+  SoundUtilitySettings:
+    PoolSize: 4
+  WebLeaderboardSettings:
+    Url: 
+    GameName: 
+    GameVersion: 
+    ClientName: 
+    ClientPassword: 
+  AssetBundleSettings:
+    Mode: 0
+    Path: 
