@@ -1,3 +1,6 @@
 [submodule "Assets/UDBase"]
 	path = Assets/UDBase
 url=https://github.com/KonH/UDBase.git
+[submodule "Tools/MarkdownGenerator"]
+	path = Tools/MarkdownGenerator
+	url = https://github.com/neuecc/MarkdownGenerator.git
