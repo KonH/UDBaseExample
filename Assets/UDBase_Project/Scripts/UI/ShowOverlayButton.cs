@@ -1,10 +1,13 @@
 ﻿using UDBase.UI.Common;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LogSystem;
+using Zenject;
 
 public class ShowOverlayButton : ActionButton {
     public UIOverlay DirectWindow;
 	public ContentId ContentWindow;
+
+	ILog _log;
 
 	public override bool IsInteractable() {
         return true;
@@ -18,6 +21,11 @@ public class ShowOverlayButton : ActionButton {
 		AddOverlay();
     }
 
+	[Inject]
+	public void Init(ILog log) {
+		_log = log;
+	}
+
 	void AddOverlay() {
 		if( DirectWindow ) {
 			UIManager.Current.ShowOverlay(DirectWindow.gameObject, OnAnyOverlayClosed);
@@ -27,6 +35,6 @@ public class ShowOverlayButton : ActionButton {
 	}
 
 	void OnAnyOverlayClosed() {
-		Log.Message("TestOverlay is closed.", LogTags.UI);
+		_log.Message(LogTags.UI, "TestOverlay is closed.");
 	}
 }

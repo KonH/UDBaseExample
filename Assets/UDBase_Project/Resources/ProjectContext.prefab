@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebaf30e4134058c4abba4d9ea4520e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LogSettings:
+    PrefabName: VisualLogger
+    OpenButtonPosition: 0
   JsonConfigSettings:
     Items:
     - Type:
