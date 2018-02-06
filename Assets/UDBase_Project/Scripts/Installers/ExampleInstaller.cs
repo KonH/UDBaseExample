@@ -55,7 +55,7 @@ public class ExampleInstaller : UDBaseInstaller {
 		AddNetUtils();
 		AddLocalTime();
 		AddSaveUser();
-		AddWebLeaderboards(WebLeaderboardSettings);
+		AddLocalLeaderboard();
 
 		// Project-specific controller
 		Container.Bind<ConcreteStateExample>().AsSingle();
