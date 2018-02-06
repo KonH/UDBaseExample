@@ -59,7 +59,7 @@ MonoBehaviour:
     Items:
     - Type:
         classRef: ConcreteStateExampleConfig, Assembly-CSharp
-      Name: config_example
+      Name: example_node
     FileName: config
   JsonSaveSettings:
     Items:
