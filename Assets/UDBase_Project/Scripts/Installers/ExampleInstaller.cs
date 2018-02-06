@@ -1,4 +1,5 @@
-﻿using UDBase.Common;
+﻿using UnityEngine;
+using UDBase.Common;
 using UDBase.Controllers.LogSystem.UI;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
@@ -20,10 +21,24 @@ public class ExampleInstaller : UDBaseInstaller {
 
 
 	public override void InstallBindings() {
-		// TODO: Build Types
 
 		// Utility controllers
-		AddUnityLogger();
+
+		// Optional BuildType usage
+		if ( _buildType != null ) {
+			Debug.Log($"BuildType is {_buildType}");
+			if ( _buildType.IsEditor ) {
+				AddUnityLogger();
+			} else if ( _buildType.Is(BuildTypes.Development) ) {
+				AddVisualLogger(LogSettings);
+			} else {
+				AddEmptyLogger();
+			}
+		} else {
+			Debug.LogWarning($"BuildType isn't specified!");
+			AddEmptyLogger();
+		}
+
 		AddEvents();
 		AddJsonConfig(JsonConfigSettings);
 		AddJsonSave(JsonSaveSettings);
