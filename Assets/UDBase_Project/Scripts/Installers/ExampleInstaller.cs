@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UDBase.Common;
+using UDBase.Installers;
 using UDBase.Controllers.LogSystem.UI;
 using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.SaveSystem;
