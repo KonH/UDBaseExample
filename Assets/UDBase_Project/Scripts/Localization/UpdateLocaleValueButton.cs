@@ -1,6 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UDBase.Controllers.LocalizationSystem.UI;
 
-namespace UDBase.Controllers.LocalizationSystem {
-	public class UpdateLocaleValueButton : MonoBehaviour {
+[RequireComponent(typeof(Text))]
+public class UpdateLocaleValueButton : MonoBehaviour {
+	public LocaleText Text;
+
+	int _value;
+
+	void Awake() {
+		UpdateValue();
+		GetComponent<Button>().onClick.AddListener(UpdateValue);
+	}
+
+	void UpdateValue() {
+		Text.UpdateArguments(_value.ToString());
+		_value++;
 	}
 }
