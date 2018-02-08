@@ -6,6 +6,7 @@ using UDBase.Controllers.SaveSystem;
 using UDBase.Controllers.AudioSystem;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LeaderboardSystem;
+using UDBase.Controllers.LocalizationSystem;
 using UDBase.Controllers.SceneSystem;
 using UDBase.Controllers.SoundSystem;
 
@@ -18,6 +19,7 @@ public class ExampleInstaller : UDBaseInstaller {
 	public SaveAudioController.Settings SaveAudioSettings;
 	public SoundUtility.Settings SoundSettings;
 	public WebLeaderboard.Settings WebLeaderboardSettings;
+	public SingleLocaleParser.Settings LocalizationSettings;
 
 
 	public override void InstallBindings() {
@@ -56,6 +58,7 @@ public class ExampleInstaller : UDBaseInstaller {
 		AddLocalTime();
 		AddSaveUser();
 		AddLocalLeaderboard();
+		AddSingleFileLocalization(LocalizationSettings);
 
 		// Project-specific controller
 		Container.Bind<ConcreteStateExample>().AsSingle();

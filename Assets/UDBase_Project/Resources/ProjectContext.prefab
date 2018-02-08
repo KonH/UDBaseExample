@@ -98,6 +98,8 @@ MonoBehaviour:
     GameVersion: 
     ClientName: 
     ClientPassword: 
+  LocalizationSettings:
+    FileName: localization
 --- !u!114 &114448183077237606
 MonoBehaviour:
   m_ObjectHideFlags: 1

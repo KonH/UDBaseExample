@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UDBase_Project/Scenes/Example_Leaderboard.unity
     guid: a7baad7f0e759f847b4c3d4013609c11
+  - enabled: 1
+    path: Assets/UDBase_Project/Scenes/Example_Localization.unity
+    guid: 39697ec65483eb3439046f8e6f073849
