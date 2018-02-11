@@ -1,3 +1,3 @@
-﻿key; English; Russian; Chinese; Polish;
+﻿key; English; Russian; ChineseSimplified; Polish;
 simple_text; Just text; Просто текст; 只是文字; Tylko tekst;
 format_text; I have {0} apples; У меня есть {0} яблок; 我有{0}个苹果; Mam {0} jabłek;

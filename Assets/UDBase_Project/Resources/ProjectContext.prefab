@@ -75,6 +75,9 @@ MonoBehaviour:
     - Type:
         classRef: ConcreteStateExampleSave, Assembly-CSharp
       Name: save_example
+    - Type:
+        classRef: UDBase.Controllers.LocalizationSystem.LocalizationSaveNode, Assembly-CSharp
+      Name: localization
     FileName: save
     PrettyJson: 1
     Versioning: 1
@@ -98,8 +101,11 @@ MonoBehaviour:
     GameVersion: 
     ClientName: 
     ClientPassword: 
-  LocalizationSettings:
+  LocalizationParserSettings:
+    Separator: 59
     FileName: localization
+  LocalizationSettings:
+    DefaultLanguage: 10
 --- !u!114 &114448183077237606
 MonoBehaviour:
   m_ObjectHideFlags: 1
