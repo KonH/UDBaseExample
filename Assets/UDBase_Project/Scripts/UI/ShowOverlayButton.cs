@@ -2,6 +2,7 @@
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LogSystem;
 using Zenject;
+using UDBase.UI;
 
 public class ShowOverlayButton : ActionButton {
     public UIOverlay DirectWindow;
@@ -35,6 +36,6 @@ public class ShowOverlayButton : ActionButton {
 	}
 
 	void OnAnyOverlayClosed() {
-		_log.Message(LogTags.UI, "TestOverlay is closed.");
+		_log.Message(UI.Context, "TestOverlay is closed.");
 	}
 }

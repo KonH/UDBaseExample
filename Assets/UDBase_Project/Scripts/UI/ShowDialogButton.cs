@@ -1,4 +1,5 @@
-﻿using UDBase.UI.Common;
+﻿using UDBase.UI;
+using UDBase.UI.Common;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LogSystem;
 using Zenject;
@@ -35,11 +36,11 @@ public class ShowDialogButton : ActionButton {
 	}
 
 	void OnOkClicked() {
-		_log.Message(LogTags.UI, "TestDialog is accepted.");
+		_log.Message(UI.Context, "TestDialog is accepted.");
 		AddDialog();
 	}
 
 	void OnCancelClicked() {
-		_log.Message(LogTags.UI, "TestDialog is closed.");
+		_log.Message(UI.Context, "TestDialog is closed.");
 	}
 }
