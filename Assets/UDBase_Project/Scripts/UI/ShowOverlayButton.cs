@@ -1,14 +1,15 @@
-﻿using UDBase.UI.Common;
+﻿using UDBase.UI;
+using UDBase.UI.Common;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LogSystem;
 using Zenject;
-using UDBase.UI;
 
 public class ShowOverlayButton : ActionButton {
     public UIOverlay DirectWindow;
 	public ContentId ContentWindow;
 
-	ILog _log;
+	ILog      _log;
+	UIManager _manager;
 
 	public override bool IsInteractable() {
         return true;
@@ -23,15 +24,16 @@ public class ShowOverlayButton : ActionButton {
     }
 
 	[Inject]
-	public void Init(ILog log) {
-		_log = log;
+	public void Init(ILog log, UIManager manager) {
+		_log     = log;
+		_manager = manager;
 	}
 
 	void AddOverlay() {
 		if( DirectWindow ) {
-			UIManager.Current.ShowOverlay(DirectWindow.gameObject, OnAnyOverlayClosed);
+			_manager.ShowOverlay(DirectWindow.gameObject, OnAnyOverlayClosed);
 		} else if( ContentWindow ) {
-        	UIManager.Current.ShowOverlay(ContentWindow, OnAnyOverlayClosed);
+        	_manager.ShowOverlay(ContentWindow, OnAnyOverlayClosed);
 		}
 	}
 
