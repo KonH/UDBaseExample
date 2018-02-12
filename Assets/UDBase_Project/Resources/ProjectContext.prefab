@@ -52,9 +52,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebaf30e4134058c4abba4d9ea4520e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LogSettings:
+  UnityLogSettings:
+    EnabledByDefault: 1
+    Nodes:
+    - Context:
+        classRef: UDBase.Controllers.EventSystem.EventController, Assembly-CSharp
+      Enabled: 0
+  VisualLogSettings:
+    EnabledByDefault: 1
+    Nodes: []
     PrefabName: VisualLogger
-    OpenButtonPosition: 0
+    OpenButtonPosition: 1
   JsonConfigSettings:
     Items:
     - Type:

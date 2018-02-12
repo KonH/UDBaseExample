@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using UDBase.Installers;
-using UDBase.Controllers.LogSystem.UI;
-using UDBase.Controllers.ConfigSystem;
+using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.SaveSystem;
 using UDBase.Controllers.AudioSystem;
+using UDBase.Controllers.SceneSystem;
+using UDBase.Controllers.SoundSystem;
+using UDBase.Controllers.LogSystem.UI;
+using UDBase.Controllers.ConfigSystem;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LeaderboardSystem;
 using UDBase.Controllers.LocalizationSystem;
-using UDBase.Controllers.SceneSystem;
-using UDBase.Controllers.SoundSystem;
 
 public class ExampleInstaller : UDBaseInstaller {
-	public VisualLogHandler.Settings LogSettings;
+	public UnityLog.Settings UnityLogSettings;
+	public VisualLogHandler.Settings VisualLogSettings;
 	public Config.JsonSettings JsonConfigSettings;
 	public Save.JsonSettings JsonSaveSettings;
 	public AsyncSceneLoader.Settings SceneSettings;
@@ -31,9 +33,9 @@ public class ExampleInstaller : UDBaseInstaller {
 		if ( _buildType != null ) {
 			Debug.Log($"BuildType is {_buildType}");
 			if ( _buildType.IsEditor ) {
-				AddUnityLogger();
+				AddUnityLogger(UnityLogSettings);
 			} else if ( _buildType.Is(BuildTypes.Development) ) {
-				AddVisualLogger(LogSettings);
+				AddVisualLogger(VisualLogSettings);
 			} else {
 				AddEmptyLogger();
 			}
