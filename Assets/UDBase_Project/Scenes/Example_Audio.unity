@@ -967,10 +967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings:
-    ChannelParam: 
-    ChannelName: 
-    DefaultSound: 0
-    DefaultMusic: 1
+    _channelParam: 
+    _channelName: 
+    _defaultSound: 0
+    _defaultMusic: 1
 --- !u!1 &624505342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,10 +1306,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings:
-    ChannelParam: 
-    ChannelName: 
-    DefaultSound: 1
-    DefaultMusic: 0
+    _channelParam: 
+    _channelName: 
+    _defaultSound: 1
+    _defaultMusic: 0
   ActiveItem: {fileID: 292488294}
   MutedItem: {fileID: 2123153257}
 --- !u!114 &719349033
@@ -1754,10 +1754,10 @@ MonoBehaviour:
   Holder:
     Id: {fileID: 114531190913960780, guid: 9fb57cd944e7b4f18b2c67ee28981c65, type: 2}
   Settings:
-    ChannelParam: 
-    ChannelName: 
-    DefaultSound: 1
-    DefaultMusic: 0
+    _channelParam: 
+    _channelName: 
+    _defaultSound: 1
+    _defaultMusic: 0
   AutoPlay: 0
   Loop: 0
   Delay: 0
@@ -3264,10 +3264,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings:
-    ChannelParam: 
-    ChannelName: 
-    DefaultSound: 0
-    DefaultMusic: 1
+    _channelParam: 
+    _channelName: 
+    _defaultSound: 0
+    _defaultMusic: 1
   ActiveItem: {fileID: 1393768303}
   MutedItem: {fileID: 391074531}
 --- !u!114 &1625767259
@@ -3444,10 +3444,10 @@ MonoBehaviour:
   Holder:
     Id: {fileID: 114673061731764064, guid: 9fb57cd944e7b4f18b2c67ee28981c65, type: 2}
   Settings:
-    ChannelParam: 
-    ChannelName: 
-    DefaultSound: 0
-    DefaultMusic: 1
+    _channelParam: 
+    _channelName: 
+    _defaultSound: 0
+    _defaultMusic: 1
   AutoPlay: 1
   Loop: 1
   Delay: 0
@@ -3884,10 +3884,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings:
-    ChannelParam: 
-    ChannelName: 
-    DefaultSound: 1
-    DefaultMusic: 0
+    _channelParam: 
+    _channelName: 
+    _defaultSound: 1
+    _defaultMusic: 0
 --- !u!1 &1999530392
 GameObject:
   m_ObjectHideFlags: 0

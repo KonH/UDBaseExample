@@ -2063,8 +2063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a75672a5c5c3084fa1b605622c94d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: simple_text
-  Arguments: []
+  _key: simple_text
+  _arguments: []
 --- !u!1 &1643527009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,8 +2151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a75672a5c5c3084fa1b605622c94d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: format_text
-  Arguments: []
+  _key: format_text
+  _arguments: []
 --- !u!1 &1780081020
 GameObject:
   m_ObjectHideFlags: 0
