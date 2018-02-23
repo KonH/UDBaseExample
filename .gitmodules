@@ -4,3 +4,6 @@ url=https://github.com/KonH/UDBase.git
 [submodule "Tools/MarkdownGenerator"]
 	path = Tools/MarkdownGenerator
 url=https://github.com/KonH/MarkdownGenerator.git
+[submodule "Wiki"]
+	path = Wiki
+	url = https://github.com/KonH/UDBase.wiki.git
