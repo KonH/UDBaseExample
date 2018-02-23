@@ -1,4 +1,5 @@
-﻿using UDBase.UI.Common;
+﻿using UDBase.UI;
+using UDBase.UI.Common;
 using UDBase.Controllers.ContentSystem;
 using UDBase.Controllers.LogSystem;
 using Zenject;
@@ -7,7 +8,8 @@ public class ShowDialogButton : ActionButton {
     public UIOverlay DirectWindow;
 	public ContentId ContentWindow;
 
-	ILog _log;
+	ILog      _log;
+	UIManager _manager;
 
 	public override bool IsInteractable() {
         return true;
@@ -22,24 +24,25 @@ public class ShowDialogButton : ActionButton {
     }
 
 	[Inject]
-	public void Init(ILog log) {
-		_log = log; 
+	public void Init(ILog log, UIManager manager) {
+		_log     = log;
+		_manager = manager;
 	}
 
 	void AddDialog() {
 		if( DirectWindow ) {
-			UIManager.Current.ShowDialog(DirectWindow.gameObject, OnOkClicked, OnCancelClicked);
+			_manager.ShowDialog(DirectWindow.gameObject, OnOkClicked, OnCancelClicked);
 		} else if( ContentWindow ) {
-        	UIManager.Current.ShowDialog(ContentWindow, OnOkClicked, OnCancelClicked);
+        	_manager.ShowDialog(ContentWindow, OnOkClicked, OnCancelClicked);
 		}
 	}
 
 	void OnOkClicked() {
-		_log.Message(LogTags.UI, "TestDialog is accepted.");
+		_log.Message(UI.Context, "TestDialog is accepted.");
 		AddDialog();
 	}
 
 	void OnCancelClicked() {
-		_log.Message(LogTags.UI, "TestDialog is closed.");
+		_log.Message(UI.Context, "TestDialog is closed.");
 	}
 }

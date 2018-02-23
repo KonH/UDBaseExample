@@ -7,7 +7,7 @@ using UDBase.Controllers.LeaderboardSystem;
 using UDBase.Utils;
 using Zenject;
 
-public class LeaderboardControls : MonoBehaviour {
+public class LeaderboardControls : MonoBehaviour, ILogContext {
 
 	public InputField UserField;
 	public InputField VersionField;
@@ -83,8 +83,8 @@ public class LeaderboardControls : MonoBehaviour {
 			_user.AddExternalId("test", GenerateUserId());
 		}
 		UserField.text = _user.Name;
-		_log.MessageFormat(LogTags.Common, "User.Id: '{0}'", _user.Id);
-		_log.MessageFormat(LogTags.Common, "User.ExternalId[\"test\"]: '{0}'", _user.FindExternalId("test"));
+		_log.MessageFormat(this, "User.Id: '{0}'", _user.Id);
+		_log.MessageFormat(this, "User.ExternalId[\"test\"]: '{0}'", _user.FindExternalId("test"));
 	}
 
 	string GenerateUserName() {
