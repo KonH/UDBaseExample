@@ -24,6 +24,12 @@ public class SceneTracker : MonoBehaviour {
 	}
 
 	void OnSceneLoaded(Scene_Loaded e) {
+		_analytics.UpdateSessionData("custom_data", (arg) => {
+			if ( arg == null ) {
+				return 0;
+			}
+			return (int)arg + 1;
+		});
 		_analytics.Event("load_scene", new Dictionary<string, object> {
 			{ "scene_name", e.SceneInfo.Name }
 		});
