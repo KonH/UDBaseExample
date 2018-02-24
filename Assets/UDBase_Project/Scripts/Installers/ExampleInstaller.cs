@@ -67,5 +67,6 @@ public class ExampleInstaller : UDBaseInstaller {
 
 		// Project-specific controller
 		Container.Bind<ConcreteStateExample>().AsSingle();
+		Container.Bind<SceneTracker>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
 	}
 }
