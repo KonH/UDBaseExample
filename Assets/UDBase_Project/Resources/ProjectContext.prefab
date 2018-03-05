@@ -56,7 +56,7 @@ MonoBehaviour:
     EnabledByDefault: 1
     Nodes:
     - Context:
-        classRef: UDBase.Controllers.EventSystem.EventController, Assembly-CSharp
+        classRef: UDBase.Controllers.EventSystem.EventController, UDBase.Scripts
       Enabled: 0
   VisualLogSettings:
     EnabledByDefault: 1
@@ -72,10 +72,10 @@ MonoBehaviour:
   JsonSaveSettings:
     Items:
     - Type:
-        classRef: UDBase.Controllers.AudioSystem.AudioSaveNode, Assembly-CSharp
+        classRef: UDBase.Controllers.AudioSystem.AudioSaveNode, UDBase.Scripts
       Name: audio
     - Type:
-        classRef: UDBase.Controllers.UserSystem.UserSaveNode, Assembly-CSharp
+        classRef: UDBase.Controllers.UserSystem.UserSaveNode, UDBase.Scripts
       Name: user
     - Type:
         classRef: RewardNode, Assembly-CSharp
@@ -84,7 +84,7 @@ MonoBehaviour:
         classRef: ConcreteStateExampleSave, Assembly-CSharp
       Name: save_example
     - Type:
-        classRef: UDBase.Controllers.LocalizationSystem.LocalizationSaveNode, Assembly-CSharp
+        classRef: UDBase.Controllers.LocalizationSystem.LocalizationSaveNode, UDBase.Scripts
       Name: localization
     FileName: save
     PrettyJson: 1
