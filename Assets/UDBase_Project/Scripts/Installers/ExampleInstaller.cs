@@ -14,7 +14,7 @@ using UDBase.Controllers.LocalizationSystem;
 public class ExampleInstaller : UDBaseInstaller {
 	public UnityLog.Settings UnityLogSettings;
 	public VisualLogHandler.Settings VisualLogSettings;
-	public Config.JsonSettings JsonConfigSettings;
+	public Config.JsonNetworkSettings JsonConfigSettings;
 	public Save.JsonSettings JsonSaveSettings;
 	public AsyncSceneLoader.Settings SceneSettings;
 	public AssetBundleContentController.Settings AssetBundleSettings;
@@ -45,7 +45,7 @@ public class ExampleInstaller : UDBaseInstaller {
 		}
 
 		AddEvents();
-		AddJsonConfig(JsonConfigSettings);
+		AddJsonNetworkConfig(JsonConfigSettings);
 		AddJsonSave(JsonSaveSettings);
 		AddDirectContentLoader();
 		AddBundleContentLoader(AssetBundleSettings);
