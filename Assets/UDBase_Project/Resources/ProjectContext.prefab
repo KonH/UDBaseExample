@@ -69,6 +69,8 @@ MonoBehaviour:
         classRef: ConcreteStateExampleConfig, Assembly-CSharp
       Name: example_node
     FileName: config
+    Url: konhit.xyz/udbase
+    WebFileName: config.json
   JsonSaveSettings:
     Items:
     - Type:
