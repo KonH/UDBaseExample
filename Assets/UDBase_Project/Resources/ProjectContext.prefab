@@ -88,7 +88,7 @@ MonoBehaviour:
     - Type:
         classRef: UDBase.Controllers.LocalizationSystem.LocalizationSaveNode, UDBase.Scripts
       Name: localization
-    FileName: save
+    FileName: save.json
     PrettyJson: 1
     Versioning: 1
   SceneSettings:
