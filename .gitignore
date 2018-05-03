@@ -4,6 +4,7 @@
 
 # Inverse ignore some stuff
 !/Assets/
+!/Packages/
 !/ProjectSettings/
 !/Tools/
 !/Wiki
