@@ -31,13 +31,13 @@ public class LeaderboardControls : MonoBehaviour, ILogContext {
 
 	IUser _user;
 	ILeaderboard _leaderboard;
-	ILog _log;
+	ULogger _log;
 
 	[Inject]
 	public void Init(IUser user, ILeaderboard leaderboard, ILog log) {
 		_user = user;
 		_leaderboard = leaderboard;
-		_log = log;
+		_log = log.CreateLogger(this);
 	}
 
 	void Awake() {
@@ -83,8 +83,8 @@ public class LeaderboardControls : MonoBehaviour, ILogContext {
 			_user.AddExternalId("test", GenerateUserId());
 		}
 		UserField.text = _user.Name;
-		_log.MessageFormat(this, "User.Id: '{0}'", _user.Id);
-		_log.MessageFormat(this, "User.ExternalId[\"test\"]: '{0}'", _user.FindExternalId("test"));
+		_log.MessageFormat("User.Id: '{0}'", _user.Id);
+		_log.MessageFormat("User.ExternalId[\"test\"]: '{0}'", _user.FindExternalId("test"));
 	}
 
 	string GenerateUserName() {
